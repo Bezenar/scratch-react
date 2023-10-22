@@ -15,6 +15,14 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
     },
+    cache: {
+        type: 'filesystem',
+    },
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    },
     module: {
         rules: [
             {
