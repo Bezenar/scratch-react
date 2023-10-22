@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+require('dotenv').config({ path: './.env' });
 
 module.exports = {
     entry: {
@@ -26,7 +27,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             inject: false,
-            title: 'React Rick and Morty123',
+            title: process.env.REACT_APP_TITLE,
             filename: path.resolve(__dirname, 'dist/index.html'),
             template: path.resolve(__dirname, 'static/index.html'),
             templateParameters: {
