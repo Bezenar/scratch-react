@@ -16,5 +16,8 @@
         "jsx": "react-jsx",
         "moduleResolution": "Node"
     },
+    "files": [
+        "./declaration.d.ts",
+    ],
     "include": ["./src/**/*.ts", "./src/**/*.tsx"],
 }

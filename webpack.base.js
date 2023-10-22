@@ -24,6 +24,23 @@ module.exports = {
                 exclude: '/node_modules/',
             },
             {
+                test: /\.module.scss$/,
+                include: path.resolve(__dirname, 'src'),
+                exclude: ['/node_modules/', path.resolve(__dirname, 'src/assets/styles/main.scss')],
+                use: [
+                    'style-loader',
+                    'css-modules-typescript-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                localIdentName: '[name]__local[local]',
+                            }
+                        }
+                    },
+                ],
+            },
+            {
                 test: /\.scss$/,
                 include: path.resolve(__dirname, 'src/assets/styles/main.scss'),
                 exclude: /node_modules/,
@@ -34,7 +51,7 @@ module.exports = {
                     'postcss-loader',
                     'sass-loader',
                 ]
-            }
+            },
         ],
     },
     plugins: [
