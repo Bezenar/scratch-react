@@ -4,7 +4,7 @@ require('dotenv').config({ path: './.env' });
 
 module.exports = {
     entry: {
-        main: path.resolve(__dirname, 'src/index.ts'),
+        main: path.resolve(__dirname, 'src/index.tsx'),
     },
     output: {
         path: path.resolve(__dirname, 'dist/'),
