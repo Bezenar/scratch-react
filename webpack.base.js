@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 require('dotenv').config({ path: './.env' });
 
 module.exports = {
@@ -22,6 +23,18 @@ module.exports = {
                 include: path.resolve(__dirname, 'src'),
                 exclude: '/node_modules/',
             },
+            {
+                test: /\.scss$/,
+                include: path.resolve(__dirname, 'src/assets/styles/main.scss'),
+                exclude: /node_modules/,
+                sideEffects: true,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader',
+                ]
+            }
         ],
     },
     plugins: [
@@ -31,9 +44,12 @@ module.exports = {
             filename: path.resolve(__dirname, 'dist/index.html'),
             template: path.resolve(__dirname, 'static/index.html'),
             templateParameters: {
-                css: 'main.css',
+                css: 'css/styles.css',
                 js: 'js/bundle.main.js',
             },
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'css/styles.css',
         }),
     ],
 };
