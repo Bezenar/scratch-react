@@ -1,0 +1,7 @@
+@mixin generateColorClasses($property) {
+    @each $key, $value in $colors {
+        &--#{$key} {
+            #{$property}: $value;
+        }
+    }
+}
