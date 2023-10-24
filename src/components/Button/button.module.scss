@@ -1,0 +1,14 @@
+.btn {
+    padding: 0.33rem 0.66rem;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    background-color: color-mix(in srgb, var(--black) 50%, transparent);
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &:hover {
+        color: var(--white);
+        border-color: var(--white);
+    }
+}
