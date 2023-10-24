@@ -4,18 +4,7 @@ import cn from '../../helpers/cn';
 import TypeCheck from '../../helpers/TypeCheck';
 import StringHelpers from '../../helpers/StringHelpers';
 import ObjectHelpers from '../../helpers/ObjectHelpers';
-
-interface I_Button {
-    children: React.ReactNode;
-    type?: 'button' | 'submit' | 'reset';
-    disabled?: boolean;
-    id?: string;
-    className?: string;
-    style?: React.CSSProperties;
-    onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
-}
-
-type T_ComputedAttributes = Partial<Omit<I_Button, 'className' | 'type' | 'onClick' | 'children'>>;
+import type { I_Button, T_ComputedAttributes } from './types';
 
 const Button: React.NamedExoticComponent<I_Button> = memo(({
     children,
@@ -29,7 +18,9 @@ const Button: React.NamedExoticComponent<I_Button> = memo(({
     const computedProps = useMemo<T_ComputedAttributes>(() => {
         const props: T_ComputedAttributes = {};
 
-        if(TypeCheck.isBoolean(disabled)) props.disabled = disabled;
+        if(TypeCheck.isBoolean(disabled)) {
+            props.disabled = disabled;
+        }
 
         if(
             TypeCheck.isString(id) &&
@@ -39,7 +30,9 @@ const Button: React.NamedExoticComponent<I_Button> = memo(({
             props.id = id;
         }
 
-        if(TypeCheck.isObject(style) && !ObjectHelpers.isEmptyObject(style as {})) props.style = style;
+        if(TypeCheck.isObject(style) && !ObjectHelpers.isEmptyObject(style as {})) {
+            props.style = style;
+        }
 
 
         return props;
