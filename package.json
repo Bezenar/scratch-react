@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "prod": "webpack --progress --config ./webpack.prod.js",
-    "dev": "webpack serve --config ./webpack.dev.js"
+    "dev": "webpack serve --config ./webpack.dev.js",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,17 @@
     "react-router-dom": "^6.17.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-typescript": "^7.23.2",
+    "@storybook/addon-essentials": "^7.5.1",
+    "@storybook/addon-interactions": "^7.5.1",
+    "@storybook/addon-links": "^7.5.1",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.5.1",
+    "@storybook/react": "^7.5.1",
+    "@storybook/react-webpack5": "^7.5.1",
+    "@storybook/testing-library": "^0.2.2",
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
     "@types/react-router-dom": "^5.3.3",
@@ -35,6 +48,7 @@
     "postcss-loader": "^7.3.3",
     "sass": "^1.69.4",
     "sass-loader": "^13.3.2",
+    "storybook": "^7.5.1",
     "style-loader": "^3.3.3",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2",
