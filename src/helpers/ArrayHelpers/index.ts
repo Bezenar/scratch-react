@@ -3,3 +3,5 @@ class ArrayHelpers {
         return value.length === 0;
     }
 }
+
+export default new ArrayHelpers();
