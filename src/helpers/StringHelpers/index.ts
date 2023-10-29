@@ -1,4 +1,4 @@
-import N_Helpers from '../types/helpers';
+import N_Helpers from '../../types/helpers';
 
 class StringHelper implements N_Helpers.I_StringHelpers {
     public isEmptyString(value: string): boolean {
