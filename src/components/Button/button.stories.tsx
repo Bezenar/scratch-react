@@ -19,6 +19,7 @@ const meta: Meta<typeof Button> = {
         },
         id: {
             control: 'text',
+            description: 'Add id attribute to button',
             table: {
                 type: {
                     summary: 'string',
@@ -27,6 +28,7 @@ const meta: Meta<typeof Button> = {
         },
         className: {
             control: 'text',
+            description: 'Add additional classnames to button',
             table: {
                 type: {
                     summary: 'string',
@@ -38,6 +40,7 @@ const meta: Meta<typeof Button> = {
         },
         style: {
             control: 'object',
+            description: 'Add additional inline styles to button',
             table: {
                 type: {
                     summary: 'CSSProperties',
@@ -46,6 +49,7 @@ const meta: Meta<typeof Button> = {
         },
         disabled: {
             control: 'boolean',
+            description: 'Disable button',
             table: {
                 type: {
                     summary: 'boolean',
@@ -54,6 +58,7 @@ const meta: Meta<typeof Button> = {
         },
         type: {
             control: 'inline-radio',
+            description: 'Button type',
             options: ['button', 'reset', 'submit'],
             table: {
                 type: {
