@@ -1,0 +1,55 @@
+$flex-dir: (
+  'row': row,
+  'rowrev': row-reverse,
+  'col': column,
+  'colrev': column-reverse,
+);
+$jc: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'sb': space-between,
+  'se': space-evenly,
+  'sa': space-around,
+);
+$ai: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'stretch': stretch,
+);
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+
+    &.gap {
+        @each $step in $steps {
+            &-#{$step} {
+                gap: #{$step * $stepValue + 'rem'}
+            }
+        }
+    }
+
+    .nowrap {
+        flex-wrap: nowrap;
+    }
+
+    @each $name, $value in $flex-dir {
+        &.dir-#{$name} {
+            flex-direction: $value;
+        }
+    }
+
+    @each $name, $value in $jc {
+        &.jc-#{$name} {
+            justify-content: $value;
+        }
+    }
+
+    @each $name, $value in $ai {
+        &.ai-#{$name} {
+            align-items: $value;
+        }
+    }
+}

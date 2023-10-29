@@ -1,0 +1,19 @@
+.p {
+    @each $dirKey, $dirValue in $directions {
+        &#{$dirKey} {
+            @each $step in $steps {
+                &-#{$step} {
+                    padding-#{$dirValue}: #{$step * $stepValue + 'rem'}
+                }
+            }
+        }
+    }
+
+    &a {
+        @each $step in $steps {
+            &-#{$step} {
+                padding: #{$step * $stepValue + 'rem'}
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.m {
+    @each $dirKey, $dirValue in $directions {
+        &#{$dirKey} {
+            @each $step in $steps {
+                &-#{$step} {
+                    margin-#{$dirValue}: #{$step * $stepValue + 'rem'}
+                }
+            }
+        }
+    }
+
+    &a {
+        @each $step in $steps {
+            &-#{$step} {
+                margin: #{$step * $stepValue + 'rem'}
+            }
+        }
+    }
+}
