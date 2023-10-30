@@ -1,6 +1,5 @@
 import StringHelpers from '.';
 
-
 describe('StringHelpers', () => {
     describe('isEmptyString method', () => {
         it('Should return true when get empty string', () => {

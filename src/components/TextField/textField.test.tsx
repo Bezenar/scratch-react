@@ -18,7 +18,7 @@ const PROPS: I_TextField = {
     debounce: undefined,
     onFocus: undefined,
     onBlur: undefined,
-}
+};
 
 describe('<TextField />', () => {
     describe('Required props', () => {
@@ -39,15 +39,18 @@ describe('<TextField />', () => {
         it('After debounce time should call parent method to change state', async () => {
             await userEvent.type(screen.getByRole('textbox'), 'new value');
 
-            await waitFor(() => {
-                expect(mockOnChange).toHaveBeenCalled();
-                expect(mockOnChange).toHaveBeenCalledWith(`${PROPS.value}new value`);
-            }, {timeout: 310})
+            await waitFor(
+                () => {
+                    expect(mockOnChange).toHaveBeenCalled();
+                    expect(mockOnChange).toHaveBeenCalledWith(`${PROPS.value}new value`);
+                },
+                { timeout: 310 }
+            );
         });
     });
 
     describe('Optional props', () => {
-        describe('By default doesn\'t have', () => {
+        describe("By default doesn't have", () => {
             beforeEach(() => {
                 render(<TextField {...PROPS} />);
             });
@@ -109,7 +112,7 @@ describe('<TextField />', () => {
             await userEvent.click(screen.getByRole('textbox'));
 
             expect(mockOnFocus).toHaveBeenCalled();
-            expect(mockOnFocus).toHaveBeenCalledWith(expect.objectContaining({target: expect.any(HTMLInputElement)}));
+            expect(mockOnFocus).toHaveBeenCalledWith(expect.objectContaining({ target: expect.any(HTMLInputElement) }));
         });
 
         it('Prop "onBlur" add to input blur event', async () => {
@@ -119,7 +122,7 @@ describe('<TextField />', () => {
             await screen.getByRole('textbox').blur();
 
             expect(mockOnBlur).toHaveBeenCalled();
-            expect(mockOnBlur).toHaveBeenCalledWith(expect.objectContaining({target: expect.any(HTMLInputElement)}));
+            expect(mockOnBlur).toHaveBeenCalledWith(expect.objectContaining({ target: expect.any(HTMLInputElement) }));
         });
 
         it('By default "debounce" are 300ms, after which call prop method onChange', async () => {
@@ -127,10 +130,13 @@ describe('<TextField />', () => {
 
             await userEvent.type(screen.getByRole('textbox'), 'new value');
 
-            await waitFor(() => {
-                expect(mockOnChange).toHaveBeenCalled();
-                expect(mockOnChange).toHaveBeenCalledWith(`${PROPS.value}new value`);
-            }, {timeout: 310})
+            await waitFor(
+                () => {
+                    expect(mockOnChange).toHaveBeenCalled();
+                    expect(mockOnChange).toHaveBeenCalledWith(`${PROPS.value}new value`);
+                },
+                { timeout: 310 }
+            );
         });
 
         it('Prop "debounce" set time in ms, after which call prop method onChange', async () => {
@@ -138,10 +144,13 @@ describe('<TextField />', () => {
 
             await userEvent.type(screen.getByRole('textbox'), 'new value');
 
-            await waitFor(() => {
-                expect(mockOnChange).toHaveBeenCalled();
-                expect(mockOnChange).toHaveBeenCalledWith(`${PROPS.value}new value`);
-            }, {timeout: 510})
+            await waitFor(
+                () => {
+                    expect(mockOnChange).toHaveBeenCalled();
+                    expect(mockOnChange).toHaveBeenCalledWith(`${PROPS.value}new value`);
+                },
+                { timeout: 510 }
+            );
         });
     });
 });

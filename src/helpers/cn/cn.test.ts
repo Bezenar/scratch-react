@@ -16,10 +16,10 @@ describe('helper function - cn', () => {
     });
 
     it('Should combine string and object key, if key value is truthy', () => {
-        expect(cn('class', {class2: true})).toBe('class class2');
+        expect(cn('class', { class2: true })).toBe('class class2');
     });
 
-    it('Shouldn\'t combine string and object key, if key value is falsy', () => {
-        expect(cn('class', {class2: !!''})).toBe('class');
-    }); 
+    it("Shouldn't combine string and object key, if key value is falsy", () => {
+        expect(cn('class', { class2: !!'' })).toBe('class');
+    });
 });

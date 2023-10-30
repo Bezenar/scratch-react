@@ -3,7 +3,7 @@ import N_Helpers from '../../types/helpers';
 class TypeCheck implements N_Helpers.I_TypeCheck {
     public isBoolean(value: unknown): boolean {
         return typeof value === 'boolean';
-    };
+    }
 
     public isString(value: unknown): boolean {
         return typeof value === 'string';

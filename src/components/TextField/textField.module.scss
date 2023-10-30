@@ -25,9 +25,11 @@
 
 .required {
     position: relative;
+
     .input {
         padding-right: 0.5rem;
     }
+
     &::before {
         content: '*';
         display: flex;

@@ -3,26 +3,24 @@ import s from './textField.module.scss';
 import useTimeout from '../../hooks/useTimeout';
 import type { I_TextField, T_RestProps } from './types';
 
-const TextField: React.FC<I_TextField> = ({
-    value,
-    debounce = 300,
-    onChange,
-    ...restProps
-}) => {
+const TextField: React.FC<I_TextField> = ({ value, debounce = 300, onChange, ...restProps }) => {
     const [innerValue, setInnerValue] = useState<string>(value);
 
     useTimeout<string, (val: string) => void>(innerValue, onChange, debounce);
 
-    const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-        const eventValue = e.target.value;
-        setInnerValue(eventValue);
-    }, [value]);
+    const handleChange = useCallback(
+        (e: React.ChangeEvent<HTMLInputElement>) => {
+            const eventValue = e.target.value;
+            setInnerValue(eventValue);
+        },
+        [value]
+    );
 
     const memoizedProps = useMemo<T_RestProps>(() => {
         const props = Object.entries(restProps).reduce<Record<string, unknown>>((acc, entry) => {
             const [key, value] = entry;
 
-            if(value) {
+            if (value) {
                 acc[key] = value;
             }
             return acc;
@@ -42,6 +40,6 @@ const TextField: React.FC<I_TextField> = ({
             />
         </span>
     );
-}
+};
 
 export default TextField;

@@ -91,7 +91,7 @@ const meta: Meta<typeof TextField> = {
                 },
                 defaultValue: {
                     summary: '300',
-                }
+                },
             },
         },
         onFocus: {

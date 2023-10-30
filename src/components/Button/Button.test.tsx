@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import Button from '.';
 
 import type { I_Button } from './types';
-import type {RenderResult} from '@testing-library/react';
+import type { RenderResult } from '@testing-library/react';
 
 const mockClick = jest.fn();
 
@@ -16,14 +16,14 @@ const PROPS: I_Button = {
     className: undefined,
     style: undefined,
     onClick: mockClick,
-}
+};
 
 describe('<Button />', () => {
     let wrapper: (RenderResult['container'] & { rerender: RenderResult['rerender'] }) | null = null;
 
     beforeEach(() => {
-        const {container, rerender} = render(<Button {...PROPS} />);
-        wrapper = {...container, rerender};
+        const { container, rerender } = render(<Button {...PROPS} />);
+        wrapper = { ...container, rerender };
     });
 
     afterEach(() => {
@@ -33,7 +33,6 @@ describe('<Button />', () => {
     it('Should render children', () => {
         expect(screen.getByText(PROPS.children as string)).toBeInTheDocument();
     });
-
 
     it('By default button have type attribute as "button"', () => {
         expect(screen.getByRole('button')).toHaveAttribute('type', PROPS.type);
@@ -55,7 +54,7 @@ describe('<Button />', () => {
         expect(screen.getByRole('button')).toBeDisabled();
     });
 
-    it('By default button doesn\'t have id attribute', () => {
+    it("By default button doesn't have id attribute", () => {
         expect(screen.getByRole('button')).not.toHaveAttribute('id');
     });
 
@@ -74,21 +73,21 @@ describe('<Button />', () => {
 
         expect(screen.getByRole('button')).toHaveClass('extraClass');
     });
-    
-    it('By default button doesn\'t have style attribute ', () => {
+
+    it("By default button doesn't have style attribute ", () => {
         expect(screen.getByRole('button')).not.toHaveAttribute('style');
     });
 
     it('Prop "style" control button attribute "style"', () => {
-        wrapper?.rerender(<Button {...PROPS} style={{color: 'red'}} />);
+        wrapper?.rerender(<Button {...PROPS} style={{ color: 'red' }} />);
 
-        expect(screen.getByRole('button')).toHaveStyle({color: 'red'});
+        expect(screen.getByRole('button')).toHaveStyle({ color: 'red' });
     });
 
     it('Click on button call prop "onClick"', async () => {
         await userEvent.click(screen.getByRole('button'), {});
 
         expect(mockClick).toHaveBeenCalled();
-        expect(mockClick).toHaveBeenCalledWith(expect.objectContaining({target: expect.any(HTMLButtonElement)}));
+        expect(mockClick).toHaveBeenCalledWith(expect.objectContaining({ target: expect.any(HTMLButtonElement) }));
     });
 });
