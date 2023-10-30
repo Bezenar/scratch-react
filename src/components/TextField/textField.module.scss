@@ -1,0 +1,43 @@
+.input {
+    outline: none;
+    padding: 0.125rem 0.25rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent transparent var(--primary) transparent;
+    color: var(--primary);
+    text-align: center;
+    background-color: transparent;
+    transition: all 0.5s ease;
+
+    &::placeholder {
+        color: var(--secondary);
+    }
+
+    &:focus {
+        border-color: transparent transparent var(--white) transparent;
+        color: var(--white);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+    }
+}
+
+.required {
+    position: relative;
+    .input {
+        padding-right: 0.5rem;
+    }
+    &::before {
+        content: '*';
+        display: flex;
+        align-content: center;
+        color: red;
+        font-size: 0.8rem;
+        height: 100%;
+        position: absolute;
+        top: calc(50% + 0.4rem);
+        right: 0.125rem;
+        transform: translateY(-50%);
+    }
+}
