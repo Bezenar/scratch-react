@@ -9,7 +9,7 @@ const TextField: React.FC<I_TextField> = ({
     onChange,
     ...restProps
 }) => {
-    const [innerValue, setInnerValue] = useState<string>(value ?? '');
+    const [innerValue, setInnerValue] = useState<string>(value);
 
     useTimeout<string, (val: string) => void>(innerValue, onChange, debounce);
 
