@@ -14,11 +14,12 @@ const meta: Meta<typeof TextField> = {
                 },
             },
             type: {
-                name: 'function',
+                name: 'string',
                 required: true,
             },
         },
         onChange: {
+            action: 'Change event',
             control: null,
             description: 'Will called after debounce time',
             table: {
@@ -88,9 +89,13 @@ const meta: Meta<typeof TextField> = {
                 type: {
                     summary: 'number',
                 },
+                defaultValue: {
+                    summary: '300',
+                }
             },
         },
         onFocus: {
+            action: 'Focus event',
             control: null,
             table: {
                 type: {
@@ -99,6 +104,7 @@ const meta: Meta<typeof TextField> = {
             },
         },
         onBlur: {
+            action: 'Blur event',
             control: null,
             table: {
                 type: {
