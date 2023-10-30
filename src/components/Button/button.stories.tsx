@@ -67,23 +67,24 @@ const meta: Meta<typeof Button> = {
                 },
                 defaultValue: {
                     summary: 'button',
-                }
+                },
             },
         },
         onClick: {
+            action: 'Button clicked',
             control: null,
             table: {
                 type: {
                     summary: '(e: React.MouseEvent<HTMLButtonElement>) => void',
-                }
+                },
             },
             type: {
                 name: 'function',
                 required: true,
-            }
-        }
+            },
+        },
     },
-}
+};
 
 export default meta;
 
@@ -97,7 +98,6 @@ export const Default: Story = {
         style: {},
         disabled: false,
         type: 'button',
-        onClick: (e) => console.log(e),
     },
-    render: (args) => <Button {...args} />
-}
+    render: (args) => <Button {...args} />,
+};

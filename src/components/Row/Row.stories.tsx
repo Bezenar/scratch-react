@@ -45,8 +45,8 @@ const meta: Meta<typeof Row> = {
                         'sb' - justify-content: space-between;
                         'se' - justify-content: space-evenly;
                     `,
-                }
-            }
+                },
+            },
         },
         ai: {
             control: 'radio',
@@ -61,11 +61,11 @@ const meta: Meta<typeof Row> = {
                         'center' - align-items: center;
                         'stretch - align-items: stretch;
                     `,
-                }
-            }
-        }
+                },
+            },
+        },
     },
-}
+};
 
 export default meta;
 
@@ -81,12 +81,16 @@ export const Default: Story = {
     },
     render: (args) => {
         return (
-            <div className="wid-100" style={{height: 300}}>
+            <div className="wid-100" style={{ height: 300 }}>
                 <Row {...args} className={args.ai ? 'h-full' : ''}>
-                    <div className={cn('bg--black text--white pa-5', {['wid-50 mr-5']: !!args.nowrap})}>Children 1</div>
-                    <div className={cn('bg--black text--white pa-5', {['wid-50 mr-5']: !!args.nowrap})}>Children 2</div>
+                    <div className={cn('bg--black text--white pa-5', { ['wid-50 mr-5']: !!args.nowrap })}>
+                        Children 1
+                    </div>
+                    <div className={cn('bg--black text--white pa-5', { ['wid-50 mr-5']: !!args.nowrap })}>
+                        Children 2
+                    </div>
                 </Row>
             </div>
         );
-    }
-}
+    },
+};

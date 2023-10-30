@@ -19,7 +19,6 @@ const PROPS: I_Button = {
 }
 
 describe('<Button />', () => {
-    //@ts-ignore
     let wrapper: (RenderResult['container'] & { rerender: RenderResult['rerender'] }) | null = null;
 
     beforeEach(() => {

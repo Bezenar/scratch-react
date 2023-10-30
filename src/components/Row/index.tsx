@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import cn from '../../helpers/cn';
 import type { I_Row } from './types';
 
-const Row: React.FC<I_Row> = ({children, jc, ai, dir, nowrap, className = ''}) => {
+const Row: React.NamedExoticComponent<I_Row> = memo(({children, jc, ai, dir, nowrap, className = ''}) => {
     return (
         <div
             className={cn(
@@ -18,6 +19,6 @@ const Row: React.FC<I_Row> = ({children, jc, ai, dir, nowrap, className = ''}) =
             { children }
         </div>
     );
-};
+});
 
 export default Row;
