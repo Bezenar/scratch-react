@@ -1,10 +1,10 @@
-import { useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import s from './checkbox.module.scss';
 import cn from '../../helpers/cn';
 import Row from '../Row';
 import type { I_Checkbox, T_InputAttributes } from './types';
 
-const Checkbox: React.FC<I_Checkbox> = ({ checked, id, prepend, required, disabled, name, children, onChange }) => {
+const Checkbox: React.NamedExoticComponent<I_Checkbox> = memo(({ checked, id, prepend, required, disabled, name, children, onChange }) => {
     const inputProps = useMemo<Partial<T_InputAttributes>>(() => {
         const props: Partial<T_InputAttributes> = {
             id,
@@ -19,9 +19,10 @@ const Checkbox: React.FC<I_Checkbox> = ({ checked, id, prepend, required, disabl
         return props;
     }, [disabled, required, name, checked, id]);
 
-    const label = useMemo(() => {
-        return (
+    const label = useMemo<React.ReactElement<any, 'span'> | null>(() => {
+        return children ? (
             <span
+                data-testid="checkbox-label"
                 className={cn(prepend ? 'mr-2' : 'ml-2', 'flex ai-center nowrap', {
                     [s.required]: !!required,
                     [s.left]: !!required && !!prepend,
@@ -30,13 +31,13 @@ const Checkbox: React.FC<I_Checkbox> = ({ checked, id, prepend, required, disabl
             >
                 {children}
             </span>
-        );
+        ) : null;
     }, [prepend, required, children]);
 
     return (
         <Row ai="center">
             {prepend && label}
-            <label className={cn(s.checkbox, { [s.checked]: checked })} htmlFor={id}>
+            <label className={cn(s.checkbox, { [s.checked]: checked, [s.disabled]: !!disabled })} htmlFor={id}>
                 <input
                     {...inputProps}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.target.checked)}
@@ -45,6 +46,6 @@ const Checkbox: React.FC<I_Checkbox> = ({ checked, id, prepend, required, disabl
             {!prepend && label}
         </Row>
     );
-};
+});
 
 export default Checkbox;

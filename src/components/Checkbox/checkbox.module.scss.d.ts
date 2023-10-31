@@ -6,6 +6,7 @@ interface CssExports {
   'checked': string;
   'left': string;
   'right': string;
+  'disabled': string;
 }
 export const cssExports: CssExports;
 export default cssExports;
