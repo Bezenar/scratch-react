@@ -1,0 +1,159 @@
+import { Meta, Story, Props } from '@storybook/addon-docs/blocks'
+
+<Meta title="Helpers" />
+
+# Common help functions.
+
+- [cn](#cn) - function
+- [TypeCheck](#TypeCheck) - class
+- [StringHelpers](#StringHelpers) - class
+- [ArrayHelpers](#ArrayHelpers) - class
+- [ObjectHelpers](#ObjectHelpers) - class
+
+
+<h2 id="cn">cn</h2>
+
+#### Description
+
+---
+
+Common practice to manage classnames.
+
+---
+
+#### Arguments
+
+---
+
+- **...arguments** -  *Array\<string | Record\<string, boolean\>\>*
+
+---
+
+#### Usage example
+
+---
+
+```TS
+cn('class-1', 'class-2') // ouptut: 'class-1 class-2'
+cn('class-1', true ? 'class-2' : 'class-3') // ouptut: 'class-1 class-2'
+cn('class-1', false ? 'class-2' : 'class-3') // ouptut: 'class-1 class-3'
+cn({'class-1': true}, {'class-2': false}) // output: 'class-1'
+cn({'class-1': true, 'class-2': false}) // output: 'class-1'
+cn('class-1', {'class-2': true, 'class-3': false}, false ? 'class-4' : 'class5') // output: 'class-1 class-2 class-5'
+```
+
+---
+
+<h2 id="TypeCheck">TypeCheck</h2>
+
+#### Description
+
+Class contain help methods to check variables types.
+
+---
+
+#### Methods
+
+- **isBoolean** - *(val: unknown) => boolean*
+- **isString** - *(val: unknown) => boolean*
+- **isNumber** - *(val: unknown) => boolean*
+- **isArray** - *(val: unknown) => boolean*
+- **isObject** - *(val: unknown) => boolean*
+
+---
+
+#### Usage example
+
+```TS
+isBoolean(true) // output: true
+isBoolean('lorem') // output: false
+
+isString('lorem') // output: true
+isString(100) // output: false
+
+isNumber(100) // output: true
+isNumber('lorem') // output: false
+
+isArray([100, 200]) // output: true
+isArray(100) // output: false
+
+isObject({a: 'a', b: 'b'}) // output: true
+isObject([100, 200]) // output: false
+```
+
+---
+
+<h2 id="StringHelpers">StringHelpers</h2>
+
+#### Description
+
+Class contain help methods to work with string.
+
+---
+
+#### Methods
+
+- **isEmptyString** - *(val: string) => boolean*
+- **isOnlyWhiteSpaceString** - *(val: string) => boolean*
+
+---
+
+#### Usage example
+
+```TS
+isEmptyString('') // output: true
+isEmptyString('Lorem') // output: false
+
+isOnlyWhiteSpaceString(' ') //output: true
+isOnlyWhiteSpaceString('   ') //output: true
+isOnlyWhiteSpaceString('   a') //output: false
+isOnlyWhiteSpaceString('a') //output: false
+```
+
+---
+
+<h2 id="ArrayHelpers">ArrayHelpers</h2>
+
+#### Description
+
+Class contain help methods to work with array.
+
+---
+
+#### Methods
+
+- **isEmptyArray** - *(val: Array\<unknown\>) => boolean*
+
+---
+
+#### Usage example
+
+```TS
+isEmptyArray([]) // output: true
+isEmptyArray([1, 2]) // output: false
+```
+
+---
+
+<h2 id="ObjectHelpers">ObjectHelpers</h2>
+
+#### Description
+
+Class contain help methods to work with object.
+
+---
+
+#### Methods
+
+- **isEmptyObject** - *(val: Record\<string | number | symbol, unknown\>) => boolean*
+
+---
+
+#### Usage example
+
+```TS
+isEmptyObject({}) // output: true
+isEmptyObject({a: 'a', b: 'b'}) // output: false
+```
+
+---

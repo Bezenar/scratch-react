@@ -1,3 +1,11 @@
+$aligment: 'left', 'right', 'center';
+
 .text {
     @include generateColorClasses('color');
+
+    @each $a in $aligment {
+        &--#{$a} {
+            text-align: #{$a};
+        }
+    }
 }

@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Custom hooks" />
+
+# Custom hooks library
+
+- [useTimeout](#useTimeout)
+
+<h2 id="useTimeout">useTimeout</h2>
+
+#### Description
+
+---
+
+Call function when value is changed. Function will be called only after delay time. Prevent call function on each change, waiting when value stop changed.
+
+---
+
+#### Arguments
+
+---
+
+- **value** - required. Generic type *v = unknown*.
+
+- **delayFunction** - required. Generic type *F extends Function = any*.
+
+- **delayTime** - optional. Type *number*.
+
+---
+
+#### Usage example
+
+---
+
+```TS
+const Component: React.FC = () => {
+    const [value, setValue] = useState<string>('');
+
+    useTimeout(value, (val) => setValue(val), 300);
+
+    // return
+}
+```
