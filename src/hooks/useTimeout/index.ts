@@ -15,5 +15,9 @@ export default function useTimeout<V = unknown, F extends Function = any>(
         timer.current = setTimeout(() => {
             delayFunction(value);
         }, delayTime);
+
+        return () => {
+            timer.current && window.clearTimeout(timer.current);
+        }
     }, [value]);
 }

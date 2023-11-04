@@ -44,7 +44,7 @@ describe('<TextField />', () => {
                     expect(mockOnChange).toHaveBeenCalled();
                     expect(mockOnChange).toHaveBeenCalledWith(`${PROPS.value}new value`);
                 },
-                { timeout: 310 }
+                { timeout: 400 }
             );
         });
     });
@@ -140,7 +140,7 @@ describe('<TextField />', () => {
         });
 
         it('Prop "debounce" set time in ms, after which call prop method onChange', async () => {
-            render(<TextField {...PROPS} debounce={500} />);
+            render(<TextField {...PROPS} debounce={200} />);
 
             await userEvent.type(screen.getByRole('textbox'), 'new value');
 
@@ -149,7 +149,7 @@ describe('<TextField />', () => {
                     expect(mockOnChange).toHaveBeenCalled();
                     expect(mockOnChange).toHaveBeenCalledWith(`${PROPS.value}new value`);
                 },
-                { timeout: 510 }
+                { timeout: 300 }
             );
         });
     });
