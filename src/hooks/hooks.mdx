@@ -5,6 +5,11 @@ import { Meta } from '@storybook/addon-docs/blocks'
 # Custom hooks library
 
 - [useTimeout](#useTimeout)
+- [useClickOutside](#useClickOutside)
+- [useDisableScroll](#useDisableScroll)
+- [useGetRect](#useGetRect)
+- [useToggle](#useToggle)
+
 
 <h2 id="useTimeout">useTimeout</h2>
 
@@ -16,15 +21,25 @@ Call function when value is changed. Function will be called only after delay ti
 
 ---
 
+#### Generics
+
+---
+
+- `V = uknown` - Assigned to `value` Arguments
+
 #### Arguments
 
 ---
 
-- **value** - required. Generic type *V = unknown*.
+- **value** - required. Generic type `V = unknown`.
 
-- **delayFunction** - required. Type *(val: V) => void*.
+- **delayFunction** - required. Type `(val: V) => void`.
 
-- **delayTime** - optional. Type *number*.
+- **delayTime** - optional. Type `number`.
+
+---
+
+#### Return type `void`
 
 ---
 
@@ -41,3 +56,179 @@ const Component: React.FC = () => {
     // return
 }
 ```
+
+---
+
+<h2 id="useClickOutside">useClickOutside</h2>
+
+#### Description
+
+---
+
+Trigger callback, when click happen outside refferenced element.
+
+---
+
+#### Generics
+
+---
+
+- *E extends HTMLElement = any* - assigned to `useRef` hook
+
+---
+
+#### Arguments
+
+---
+
+- **callback** - required. Type `() => void`
+
+---
+
+#### Return type `React.MutableRefObject<E | null>`
+
+---
+
+#### Usage example
+
+---
+
+```TS
+const Component: React.FC = () => {
+    const divRef = useClickOutside<HTMLDivElement>();
+
+    return (
+        <div ref={ divRef }>
+            // content
+        </div>
+    );
+}
+```
+
+---
+
+<h2 id="useDisableScroll">useDisableScroll</h2>
+
+#### Description
+
+---
+
+Disable/enable window scroll.
+
+---
+
+#### Arguments
+
+---
+
+- **disable** - required. Type `boolean`
+
+---
+
+#### Return type `void`
+
+---
+
+#### Usage example
+
+---
+
+```TS
+const Component: React.FC = () => {
+    const [isDisabled, setIsDisabled] = useState<boolean>(false);
+
+    useDisableScroll(isDisabled);
+
+    return // content
+}
+```
+
+---
+
+<h2 id="useGetRect">useGetRect</h2>
+
+#### Description
+
+---
+
+Return element DOM rect.
+
+---
+
+#### Generics
+
+---
+
+- *E extends HTMLElement = any* - assigned to `ref` argument
+
+---
+
+#### Arguments
+
+---
+
+- **ref** -  required. Type `React.MutableRefObject<E | null>`
+
+---
+
+#### Return type `DOMRect | null`
+
+---
+
+#### Usage example
+
+---
+
+```TS
+const Component: React.FC = () => {
+    const divRef = useRef<HTMLDivElement>();
+    const rect = useGetRect<HTMLDivElement>(divRef);
+
+    return (
+        <div ref={ divRef }>
+            // content
+        </div>
+    );
+}
+```
+
+---
+
+<h2 id="useToggle">useToggle</h2>
+
+#### Description
+
+---
+
+Boolean state managment. Specific in toggle function.
+
+- Called without arguments switch to opposite value.
+- Called with argument, change to argument value.
+
+---
+
+#### Arguments
+
+---
+
+- **initialValue** - Optional. Type `boolean`. Default value `false`;
+
+---
+
+#### Return type `[boolean, (val?:boolean) => void]`
+
+---
+
+#### Usage example
+
+---
+
+```TS
+const Component: React.FC = () => {
+    const [isOpened, toggleOpened] = useToggle();
+
+    return // content
+}
+```
+
+---
