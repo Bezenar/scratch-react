@@ -1,40 +1,26 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Text from '.';
+import PrintString from '.';
 
-const meta: Meta<typeof Text> = {
-    title: 'Components/Text',
-    component: Text,
+const meta: Meta<typeof PrintString> = {
+    title: 'Components/PrintString',
+    component: PrintString,
     argTypes: {
-        children: {
-            control: 'text',
-            table: {
-                type: {
-                    summary: 'ReactNode',
-                },
-            },
-        },
         value: {
             control: 'text',
+            description: 'String to print',
             table: {
                 type: {
-                    summary: 'ReactNode',
+                    summary: 'string',
                 },
             },
-        },
-        className: {
-            control: 'text',
-            description: 'Add additional classnames to text element',
-            table: {
-                type: {
-                    summary: 'ReactNode',
-                },
-                defaultValue: {
-                    summary: 'Empty string',
-                },
+            type: {
+                name: 'string',
+                required: true,
             },
         },
         color: {
             control: 'inline-radio',
+            description: 'Text color',
             options: ['white', 'black', 'primary', 'secondary', 'red'],
             table: {
                 type: {
@@ -47,6 +33,7 @@ const meta: Meta<typeof Text> = {
         },
         size: {
             control: 'inline-radio',
+            description: 'Text size',
             options: ['lg', 'md', 'sm', 'xs'],
             table: {
                 type: {
@@ -57,15 +44,25 @@ const meta: Meta<typeof Text> = {
                 },
             },
         },
-        paragraph: {
-            control: 'boolean',
-            description: 'Control which element to render. Inline - span, or Block - p',
+        printSpeed: {
+            control: 'number',
+            description: 'Print speed for 1 letter. 1letter/printSpeed ms',
             table: {
                 type: {
-                    summary: 'boolean',
+                    summary: 'number',
                 },
                 defaultValue: {
-                    summary: 'false',
+                    summary: '300',
+                },
+            },
+        },
+        onPrintComplete: {
+            action: 'Print complete',
+            control: 'null',
+            description: 'Callback function, called when print complete',
+            table: {
+                type: {
+                    summary: '() => void',
                 },
             },
         },
@@ -74,16 +71,16 @@ const meta: Meta<typeof Text> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Text>;
+type Story = StoryObj<typeof PrintString>;
 
 export const Default: Story = {
     args: {
-        children: 'value',
-        value: '',
-        className: '',
+        value: 'lorem ipsum',
         color: 'primary',
         size: 'md',
-        paragraph: false,
+        printSpeed: 300,
+        //@ts-expect-error
+        onPrintComplete: true,
     },
-    render: (args) => <Text {...args} />,
+    render: (args) => <PrintString {...args} />,
 };
