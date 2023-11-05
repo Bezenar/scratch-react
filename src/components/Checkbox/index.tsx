@@ -1,5 +1,5 @@
 import { memo, useMemo } from 'react';
-import s from './checkbox.module.scss';
+import s from './Checkbox.module.scss';
 import cn from '../../helpers/cn';
 import Row from '../Row';
 import type { I_Checkbox, T_InputAttributes } from './types';

@@ -1,5 +1,5 @@
 import { memo, useMemo } from 'react';
-import s from './button.module.scss';
+import s from './Button.module.scss';
 import cn from '../../helpers/cn';
 import TypeCheck from '../../helpers/TypeCheck';
 import StringHelpers from '../../helpers/StringHelpers';
