@@ -9,6 +9,24 @@
         }
     }
 
+    &x {
+        @each $step in $steps {
+            &-#{$step} {
+                padding-left: #{$step * $stepValue + 'rem'};
+                padding-right: #{$step * $stepValue + 'rem'};
+            }
+        }
+    }
+
+    &y {
+        @each $step in $steps {
+            &-#{$step} {
+                padding-top: #{$step * $stepValue + 'rem'};
+                padding-bottom: #{$step * $stepValue + 'rem'};
+            }
+        }
+    }
+
     &a {
         @each $step in $steps {
             &-#{$step} {

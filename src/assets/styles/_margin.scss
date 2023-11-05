@@ -3,8 +3,26 @@
         &#{$dirKey} {
             @each $step in $steps {
                 &-#{$step} {
-                    margin-#{$dirValue}: #{$step * $stepValue + 'rem'}
+                    margin-#{$dirValue}: #{$step * $stepValue + 'rem'};
                 }
+            }
+        }
+    }
+
+    &x {
+        @each $step in $steps {
+            &-#{$step} {
+                margin-left: #{$step * $stepValue + 'rem'};
+                margin-right: #{$step * $stepValue + 'rem'};
+            }
+        }
+    }
+
+    &y {
+        @each $step in $steps {
+            &-#{$step} {
+                margin-top: #{$step * $stepValue + 'rem'};
+                margin-bottom: #{$step * $stepValue + 'rem'};
             }
         }
     }
@@ -12,7 +30,7 @@
     &a {
         @each $step in $steps {
             &-#{$step} {
-                margin: #{$step * $stepValue + 'rem'}
+                margin: #{$step * $stepValue + 'rem'};
             }
         }
     }
