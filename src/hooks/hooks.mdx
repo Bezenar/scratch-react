@@ -20,9 +20,9 @@ Call function when value is changed. Function will be called only after delay ti
 
 ---
 
-- **value** - required. Generic type *v = unknown*.
+- **value** - required. Generic type *V = unknown*.
 
-- **delayFunction** - required. Generic type *F extends Function = any*.
+- **delayFunction** - required. Type *(val: V) => void*.
 
 - **delayTime** - optional. Type *number*.
 

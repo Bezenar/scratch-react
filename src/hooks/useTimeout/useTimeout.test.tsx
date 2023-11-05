@@ -14,7 +14,7 @@ describe('useTimeout', () => {
 
     it('Should call delayFunction after delayTime', async () => {
         renderHook<void, Parameters<typeof useTimeout>>(() =>
-            useTimeout<string, (val: string) => string>(VALUE, mockDelayFunction, DELAY_TIME)
+            useTimeout<string>(VALUE, mockDelayFunction, DELAY_TIME)
         );
 
         await waitFor(
@@ -28,7 +28,7 @@ describe('useTimeout', () => {
 
     it('Should call delay function only once', async () => {
         const { rerender } = renderHook<void, Parameters<typeof useTimeout>>(() =>
-            useTimeout<string, (val: string) => string>(VALUE, mockDelayFunction, DELAY_TIME)
+            useTimeout<string>(VALUE, mockDelayFunction, DELAY_TIME)
         );
         rerender(['12', mockDelayFunction, DELAY_TIME]);
         rerender(['1234', mockDelayFunction, DELAY_TIME]);
@@ -44,7 +44,7 @@ describe('useTimeout', () => {
 
     it('On unmount should call clear timeout', async () => {
         const { unmount } = renderHook<void, Parameters<typeof useTimeout>>(() =>
-            useTimeout<string, (val: string) => string>(VALUE, mockDelayFunction, DELAY_TIME)
+            useTimeout<string>(VALUE, mockDelayFunction, DELAY_TIME)
         );
 
         await unmount();

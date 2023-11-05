@@ -6,7 +6,7 @@ import type { I_TextField, T_RestProps } from './types';
 const TextField: React.FC<I_TextField> = ({ value, debounce = 300, onChange, ...restProps }) => {
     const [innerValue, setInnerValue] = useState<string>(value);
 
-    useTimeout<string, (val: string) => void>(innerValue, onChange, debounce);
+    useTimeout<string>(innerValue, onChange, debounce);
 
     const handleChange = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {

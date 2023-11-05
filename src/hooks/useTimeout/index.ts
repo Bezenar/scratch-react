@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 
-export default function useTimeout<V = unknown, F extends Function = any>(
+export default function useTimeout<V = unknown>(
     value: V,
-    delayFunction: F,
+    delayFunction: (val: V) => void,
     delayTime: number
 ) {
     const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
