@@ -15,7 +15,15 @@
         "strictNullChecks": true,
         "jsx": "react-jsx",
         "esModuleInterop": true,
-        "moduleResolution": "Node"
+        "moduleResolution": "Node",
+        "paths": {
+            "@atoms/*": ["./src/components/atoms/*"],
+            "@molecules/*": ["./src/components/molecules/*"],
+            "@hooks/*": ["./src/hooks/*"],
+            "@helpers/*": ["./src/helpers/*"],
+            "@img/*": ["./src/assets/img/*"],
+            "@t/*": ["./src/types/*"],
+        }
     },
     "files": [
         "./declaration.d.ts",

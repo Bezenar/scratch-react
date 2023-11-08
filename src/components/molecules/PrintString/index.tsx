@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
 import s from './PrintString.module.scss';
-import cn from '../../../helpers/cn';
-import Text from '../../atoms/Text';
-import useTimeout from '../../../hooks/useTimeout';
+import cn from '@helpers/cn';
+import Text from '@atoms/Text';
+import useTimeout from '@hooks/useTimeout';
 import type { I_PrintString } from './types';
 
 const PrintString: React.FC<I_PrintString> = ({ value, printSpeed = 300, onPrintComplete, ...rest }) => {

@@ -1,5 +1,5 @@
 import { createElement, memo } from 'react';
-import cn from '../../../helpers/cn';
+import cn from '@helpers/cn';
 import type { I_Text } from './types';
 
 const Text: React.NamedExoticComponent<I_Text> = memo(({

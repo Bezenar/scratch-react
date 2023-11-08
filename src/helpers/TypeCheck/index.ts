@@ -1,4 +1,4 @@
-import N_Helpers from '../../types/helpers';
+import N_Helpers from '@t/helpers';
 
 class TypeCheck implements N_Helpers.I_TypeCheck {
     public isBoolean(value: unknown): boolean {

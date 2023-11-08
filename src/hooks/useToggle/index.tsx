@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import TypeCheck from '../../helpers/TypeCheck';
+import TypeCheck from '@helpers/TypeCheck';
 
 export default function useToggle(initialValue: boolean = false): [boolean, (val?:boolean) => void] {
     const [state, setState] = useState<boolean>(initialValue);

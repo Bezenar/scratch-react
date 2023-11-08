@@ -1,4 +1,5 @@
-import TypeCheck from '../TypeCheck';
+import TypeCheck from '@helpers/TypeCheck';
+
 type Args = string | Record<string, boolean>;
 
 export default function cn(...args: Array<Args>): string {

@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 import s from './TextField.module.scss';
-import useTimeout from '../../../hooks/useTimeout';
+import useTimeout from '@hooks/useTimeout';
 import type { I_TextField, T_RestProps } from './types';
 
 const TextField: React.FC<I_TextField> = ({ value, debounce = 300, onChange, ...restProps }) => {
