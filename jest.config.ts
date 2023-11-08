@@ -15,6 +15,12 @@ const config: Config = {
     preset: 'ts-jest',
     moduleNameMapper: {
         '\\.module.scss': 'identity-obj-proxy',
+        '^@atoms(.*)$': '<rootDir>/src/components/atoms$1',
+        '^@molecules(.*)$': '<rootDir>/src/components/molecules$1',
+        '^@hooks(.*)$': '<rootDir>/src/hooks$1',
+        '^@helpers(.*)$': '<rootDir>/src/helpers$1',
+        '^@img(.*)$': '<rootDir>/src/assets/img$1',
+        '^@t\/(.*)$': '<rootDir>/src/types$1',
     },
     setupFilesAfterEnv: ['<rootDir>/.jest/jestDom.ts'],
     testEnvironment: 'jsdom',
