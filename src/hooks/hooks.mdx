@@ -6,8 +6,6 @@ import { Meta } from '@storybook/addon-docs/blocks'
 
 - [useTimeout](#useTimeout)
 - [useClickOutside](#useClickOutside)
-- [useDisableScroll](#useDisableScroll)
-- [useGetRect](#useGetRect)
 - [useToggle](#useToggle)
 
 
@@ -96,93 +94,6 @@ Trigger callback, when click happen outside refferenced element.
 ```TS
 const Component: React.FC = () => {
     const divRef = useClickOutside<HTMLDivElement>();
-
-    return (
-        <div ref={ divRef }>
-            // content
-        </div>
-    );
-}
-```
-
----
-
-<h2 id="useDisableScroll">useDisableScroll</h2>
-
-#### Description
-
----
-
-Disable/enable window scroll.
-
----
-
-#### Arguments
-
----
-
-- **disable** - required. Type `boolean`
-
----
-
-#### Return type `void`
-
----
-
-#### Usage example
-
----
-
-```TS
-const Component: React.FC = () => {
-    const [isDisabled, setIsDisabled] = useState<boolean>(false);
-
-    useDisableScroll(isDisabled);
-
-    return // content
-}
-```
-
----
-
-<h2 id="useGetRect">useGetRect</h2>
-
-#### Description
-
----
-
-Return element DOM rect.
-
----
-
-#### Generics
-
----
-
-- *E extends HTMLElement = any* - assigned to `ref` argument
-
----
-
-#### Arguments
-
----
-
-- **ref** -  required. Type `React.MutableRefObject<E | null>`
-
----
-
-#### Return type `DOMRect | null`
-
----
-
-#### Usage example
-
----
-
-```TS
-const Component: React.FC = () => {
-    const divRef = useRef<HTMLDivElement>();
-    const rect = useGetRect<HTMLDivElement>(divRef);
 
     return (
         <div ref={ divRef }>

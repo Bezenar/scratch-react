@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import cn from '../../helpers/cn';
+import cn from '../../../helpers/cn';
 import type { I_Row } from './types';
 
 const Row: React.NamedExoticComponent<I_Row> = memo(({ children, jc, ai, dir, nowrap, className = '' }) => {

@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 import s from './Checkbox.module.scss';
-import cn from '../../helpers/cn';
-import Row from '../Row';
+import cn from '../../../helpers/cn';
+import Row from '../../molecules/Row';
 import type { I_Checkbox, T_InputAttributes } from './types';
 
 const Checkbox: React.NamedExoticComponent<I_Checkbox> = memo(({ checked, id, prepend, required, disabled, name, children, onChange }) => {

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import PrintString from '.';
 
 const meta: Meta<typeof PrintString> = {
-    title: 'Components/PrintString',
+    title: 'Molecules/PrintString',
     component: PrintString,
     argTypes: {
         value: {
