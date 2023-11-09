@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { I_RootColors } from '@t/icons';
+import type { I_RootColors } from '@t/icons';
 
 export default function useRootColors(): I_RootColors {
     const data = useMemo(() => {
