@@ -7,6 +7,7 @@ import { Meta } from '@storybook/addon-docs/blocks'
 - [useTimeout](#useTimeout)
 - [useClickOutside](#useClickOutside)
 - [useToggle](#useToggle)
+- [useRootColors](#useRootColors)
 
 
 <h2 id="useTimeout">useTimeout</h2>
@@ -137,6 +138,45 @@ Boolean state managment. Specific in toggle function.
 ```TS
 const Component: React.FC = () => {
     const [isOpened, toggleOpened] = useToggle();
+
+    return // content
+}
+```
+
+---
+
+<h2 id="useRootColors">useRootColors</h2>
+
+#### Description
+
+---
+
+Return CSS root colors
+
+---
+
+#### Return type 
+```TS
+interface I_RootColors {
+    primary: string;
+    secondary: string;
+    white: string;
+    black: string;
+    red: string;
+}
+```
+
+---
+
+#### Usage example
+
+---
+
+```TS
+const Component: React.FC = () => {
+    const colors = useRootColors();
+    // Colors can be desturct
+    const { primary } = useRootColors();
 
     return // content
 }
