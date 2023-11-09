@@ -24,6 +24,9 @@ const config: Config = {
         '^@mocks(.*)$': '<rootDir>/src/_mocks_$1',
         '^@t\/(.*)$': '<rootDir>/src/types$1',
     },
+    transform: {
+        '.+\\.(png|svg|jpg|jpeg|gif)$': 'jest-transform-stub',
+    },
     setupFilesAfterEnv: ['<rootDir>/.jest/jestDom.ts'],
     testEnvironment: 'jsdom',
     testMatch: ['<rootDir>/src/**/?(*.)+(spec|test).[tj]s?(x)'],
