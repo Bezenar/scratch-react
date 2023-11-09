@@ -6,6 +6,7 @@ module.exports = merge(BASE_CONFIG, {
     mode: 'development',
     // devtool: 'inline-source-map',
     devServer: {
+        historyApiFallback: true,
         static: {
             directory: path.resolve(__dirname, 'static/'),
         },
