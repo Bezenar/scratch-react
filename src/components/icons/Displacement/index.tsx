@@ -1,8 +1,8 @@
-import { useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import useRootColors from '@hooks/useRootColors';
 import type { I_DirectionIcon } from '@t/icons';
 
-const Displacement: React.FC<I_DirectionIcon> = ({ size = 'md', color = 'primary', direction }) => {
+const Displacement: React.FC<I_DirectionIcon> = memo(({ size = 'md', color = 'primary', direction }) => {
     const colors = useRootColors();
 
     const paths = useMemo<JSX.Element>(() => {
@@ -32,7 +32,7 @@ const Displacement: React.FC<I_DirectionIcon> = ({ size = 'md', color = 'primary
                 return (
                     <>
                         <path
-                            data-testid="right"
+                            data-testid="down"
                             d="M2.28977 3.83418C1.97294 3.43282 2.25879 2.84297 2.7701 2.84297L15.5439 2.84297C16.0552 2.84297 16.341 3.43282 16.0242 3.83418L9.63729 11.9242C9.39229 12.2346 8.92168 12.2346 8.67669 11.9242L2.28977 3.83418Z"
                             stroke={colors[color]}
                             strokeWidth="4"
@@ -108,6 +108,8 @@ const Displacement: React.FC<I_DirectionIcon> = ({ size = 'md', color = 'primary
             {paths}
         </svg>
     );
-};
+});
+
+Displacement.displayName = 'Icon_Displacement';
 
 export default Displacement;

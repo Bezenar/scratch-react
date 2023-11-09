@@ -37,14 +37,7 @@ const meta: Meta<typeof Row> = {
             table: {
                 type: {
                     summary: 'Literal type',
-                    detail: `
-                        'start' - justify-content: start;
-                        'end' - justify-content: end;
-                        'center' - justify-content: center;
-                        'sa' - justify-content: space-around;
-                        'sb' - justify-content: space-between;
-                        'se' - justify-content: space-evenly;
-                    `,
+                    detail: `'start' - justify-content: start;\n'end' - justify-content: end;\n'center' - justify-content: center;\n'sa' - justify-content: space-around;\n'sb' - justify-content: space-between;\n'se' - justify-content: space-evenly;\n`,
                 },
             },
         },
@@ -55,12 +48,7 @@ const meta: Meta<typeof Row> = {
             table: {
                 type: {
                     summary: 'Literal type',
-                    detail: `
-                        'start' - align-items: start;
-                        'end' - align-items: end;
-                        'center' - align-items: center;
-                        'stretch - align-items: stretch;
-                    `,
+                    detail: `'start' - align-items: start;\n'end' - align-items: end;\n'center' - align-items: center;\n'stretch - align-items: stretch;\n`,
                 },
             },
         },

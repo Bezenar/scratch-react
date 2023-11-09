@@ -23,12 +23,7 @@ const meta: Meta<typeof Select> = {
             table: {
                 type: {
                     summary: 'Array<I_Option>',
-                    detail: `
-                        interface I_Option {\n
-                            id: number;\n
-                            value: string;\n
-                        }\n
-                    `,
+                    detail: `interface I_Option {\n  id: number;\n  value: string;\n}\n`,
                 },
             },
             type: {
@@ -50,12 +45,7 @@ const meta: Meta<typeof Select> = {
             table: {
                 type: {
                     summary: '(opt: I_Option) => void',
-                    detail: `
-                        interface I_Option {\n
-                            id: number;\n
-                            value: string;\n
-                        }\n
-                    `,
+                    detail: `interface I_Option {\n  id: number;\n  value: string;\n}\n`,
                 },
             },
             type: {

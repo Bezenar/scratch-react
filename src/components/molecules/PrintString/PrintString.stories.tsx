@@ -1,6 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react';
 import PrintString from '.';
 
+const SIZES = `
+lg -> 1.375rem\n
+md -> 1rem\n
+sm -> 0.75rem\n
+xs -> 0.5rem\n
+`;
+
 const meta: Meta<typeof PrintString> = {
     title: 'Molecules/PrintString',
     component: PrintString,
@@ -20,11 +27,11 @@ const meta: Meta<typeof PrintString> = {
         },
         color: {
             control: 'inline-radio',
-            description: 'Text color',
             options: ['white', 'black', 'primary', 'secondary', 'red'],
             table: {
                 type: {
                     summary: 'Literal type',
+                    detail: '"white" | "black" | "primary" | "secondary" | "red"',
                 },
                 defaultValue: {
                     summary: 'primary',
@@ -33,11 +40,12 @@ const meta: Meta<typeof PrintString> = {
         },
         size: {
             control: 'inline-radio',
-            description: 'Text size',
             options: ['lg', 'md', 'sm', 'xs'],
+            description: SIZES,
             table: {
                 type: {
                     summary: 'Literal type',
+                    detail: '"lg" | "md" | "sm" | "xs"',
                 },
                 defaultValue: {
                     summary: 'md',

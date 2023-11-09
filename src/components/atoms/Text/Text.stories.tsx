@@ -1,6 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Text from '.';
 
+const SIZES = `
+lg -> 1.375rem\n
+md -> 1rem\n
+sm -> 0.75rem\n
+xs -> 0.5rem\n
+`;
+
 const meta: Meta<typeof Text> = {
     title: 'Atoms/Text',
     component: Text,
@@ -39,6 +46,7 @@ const meta: Meta<typeof Text> = {
             table: {
                 type: {
                     summary: 'Literal type',
+                    detail: '"white" | "black" | "primary" | "secondary" | "red"',
                 },
                 defaultValue: {
                     summary: 'primary',
@@ -48,9 +56,11 @@ const meta: Meta<typeof Text> = {
         size: {
             control: 'inline-radio',
             options: ['lg', 'md', 'sm', 'xs'],
+            description: SIZES,
             table: {
                 type: {
                     summary: 'Literal type',
+                    detail: '"lg" | "md" | "sm" | "xs"',
                 },
                 defaultValue: {
                     summary: 'md',

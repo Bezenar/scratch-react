@@ -1,13 +1,15 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Displacement from '.';
+import Caret from '.';
+
 const Sizes = `
 lg -> 1.5rem\n
 md -> 1.125rem\n
 sm -> 0.75rem\n
 `;
-const meta: Meta<typeof Displacement> = {
-    title: 'Icons/Displacement',
-    component: Displacement,
+
+const meta: Meta<typeof Caret> = {
+    title: 'Icons/Caret',
+    component: Caret,
     argTypes: {
         direction: {
             control: 'inline-radio',
@@ -60,7 +62,7 @@ const meta: Meta<typeof Displacement> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Displacement>;
+type Story = StoryObj<typeof Caret>;
 
 export const Default: Story = {
     args: {
@@ -68,5 +70,5 @@ export const Default: Story = {
         color: 'primary',
         direction: 'right',
     },
-    render: (args) => <Displacement {...args} />,
+    render: (args) => <Caret {...args} />,
 };

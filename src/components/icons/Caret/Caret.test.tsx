@@ -1,13 +1,13 @@
 import { render, screen } from '@testing-library/react';
-import Displacement from '.';
+import Caret from '.';
 import { COLORS, mockColors } from '@mocks/colors';
 
-describe('Displacement icon', () => {
+describe('Caret icon', () => {
     mockColors();
 
     describe('Default props', () => {
         beforeEach(() => {
-            render(<Displacement direction="right" />);
+            render(<Caret direction="right" />);
         });
 
         it('By default apply "md" size', () => {
@@ -21,13 +21,13 @@ describe('Displacement icon', () => {
 
     describe('Prop "size"', () => {
         it('Change icon size to lg', () => {
-            render(<Displacement direction="right" size="lg" />);
+            render(<Caret direction="right" size="lg" />);
 
             expect(screen.getByRole('img')).toHaveClass('icon--lg');
         });
 
         it('Change icon size to sm', () => {
-            render(<Displacement direction="right" size="sm" />);
+            render(<Caret direction="right" size="sm" />);
 
             expect(screen.getByRole('img')).toHaveClass('icon--sm');
         });
@@ -35,25 +35,25 @@ describe('Displacement icon', () => {
 
     describe('Prop "color"', () => {
         it('Change icon color to white', () => {
-            render(<Displacement direction="right" color="white" />);
+            render(<Caret direction="right" color="white" />);
 
             expect(screen.getByTestId('right')).toHaveAttribute('stroke', COLORS.white);
         });
 
         it('Change icon color to black', () => {
-            render(<Displacement direction="right" color="black" />);
+            render(<Caret direction="right" color="black" />);
 
             expect(screen.getByTestId('right')).toHaveAttribute('stroke', COLORS.black);
         });
 
         it('Change icon color to secondary', () => {
-            render(<Displacement direction="right" color="red" />);
+            render(<Caret direction="right" color="red" />);
 
             expect(screen.getByTestId('right')).toHaveAttribute('stroke', COLORS.red);
         });
 
         it('Change icon color to red', () => {
-            render(<Displacement direction="right" color="secondary" />);
+            render(<Caret direction="right" color="secondary" />);
 
             expect(screen.getByTestId('right')).toHaveAttribute('stroke', COLORS.secondary);
         });
@@ -61,25 +61,25 @@ describe('Displacement icon', () => {
 
     describe('Prop direction change icon direction', () => {
         it(' Change direction to "left"', () => {
-            render(<Displacement direction="left" />);
+            render(<Caret direction="left" />);
 
             expect(screen.getByTestId('left')).toBeInTheDocument();
         });
 
         it(' Change direction to "right"', () => {
-            render(<Displacement direction="right" />);
+            render(<Caret direction="right" />);
 
             expect(screen.getByTestId('right')).toBeInTheDocument();
         });
 
         it(' Change direction to "up"', () => {
-            render(<Displacement direction="up" />);
+            render(<Caret direction="up" />);
 
             expect(screen.getByTestId('up')).toBeInTheDocument();
         });
         
         it(' Change direction to "down"', () => {
-            render(<Displacement direction="down" />);
+            render(<Caret direction="down" />);
 
             expect(screen.getByTestId('down')).toBeInTheDocument();
         });

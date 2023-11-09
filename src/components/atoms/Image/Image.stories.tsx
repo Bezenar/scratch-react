@@ -45,6 +45,7 @@ const meta: Meta<typeof Image> = {
             table: {
                 type: {
                     summary: 'Literal type',
+                    detail: '"lazy" | "eager"',
                 },
                 defaultValue: {
                     summary: 'eager',
