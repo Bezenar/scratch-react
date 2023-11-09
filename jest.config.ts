@@ -16,6 +16,7 @@ const config: Config = {
     moduleNameMapper: {
         '\\.module.scss': 'identity-obj-proxy',
         '^@atoms(.*)$': '<rootDir>/src/components/atoms$1',
+        '^@icons(.*)$': '<rootDir>/src/components/icons$1',
         '^@molecules(.*)$': '<rootDir>/src/components/molecules$1',
         '^@hooks(.*)$': '<rootDir>/src/hooks$1',
         '^@helpers(.*)$': '<rootDir>/src/helpers$1',

@@ -18,6 +18,7 @@
         "moduleResolution": "Node",
         "paths": {
             "@atoms/*": ["./src/components/atoms/*"],
+            "@icons/*": ["./src/components/icons/*"],
             "@molecules/*": ["./src/components/molecules/*"],
             "@hooks/*": ["./src/hooks/*"],
             "@helpers/*": ["./src/helpers/*"],
