@@ -41,6 +41,7 @@ const config: StorybookConfig = {
       '@hooks': path.resolve(__dirname, '../src/hooks/'),
       '@helpers': path.resolve(__dirname, '../src/helpers/'),
       '@img': path.resolve(__dirname, '../src/assets/img/'),
+      '@mocks': path.resolve(__dirname, '../src/_mocks_/'),
       '@t': path.resolve(__dirname, '../src/types/'),
     }
 

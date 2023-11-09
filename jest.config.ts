@@ -21,6 +21,7 @@ const config: Config = {
         '^@hooks(.*)$': '<rootDir>/src/hooks$1',
         '^@helpers(.*)$': '<rootDir>/src/helpers$1',
         '^@img(.*)$': '<rootDir>/src/assets/img$1',
+        '^@mocks(.*)$': '<rootDir>/src/_mocks_$1',
         '^@t\/(.*)$': '<rootDir>/src/types$1',
     },
     setupFilesAfterEnv: ['<rootDir>/.jest/jestDom.ts'],
