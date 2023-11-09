@@ -7,8 +7,8 @@ export interface I_RootColors {
 }
 
 export interface I_IconBase {
-    size: 'sm' | 'md' | 'lg',
-    color: keyof I_RootColors;
+    size?: 'sm' | 'md' | 'lg',
+    color?: keyof I_RootColors;
 }
 
 export interface I_DirectionIcon extends I_IconBase {
