@@ -93,7 +93,7 @@ Trigger callback, when click happen outside refferenced element.
 
 ```TS
 const Component: React.FC = () => {
-    const divRef = useClickOutside<HTMLDivElement>();
+    const divRef = useClickOutside<HTMLDivElement>(() => {/*do something when click happens outside ref*/});
 
     return (
         <div ref={ divRef }>

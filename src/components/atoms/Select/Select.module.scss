@@ -1,0 +1,47 @@
+.select {
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-color: var(--black);
+
+    &.opened {
+        border-color: var(--primary);
+
+        .arrow {
+            top: calc(50% - 0.25rem - 0.35rem);
+            border-color: transparent transparent var(--secondary) transparent;
+        }
+    }
+
+    .selectedArea {
+        position: relative;
+        min-height: 0.75rem;
+        border-bottom: 1px solid var(--primary);
+    }
+
+    .list {
+        list-style: none;
+
+        .listItem {
+            margin-left: -0.5rem;
+            margin-right: -0.5rem;
+
+            &:last-of-type {
+                border-radius: 0 0 20px 20px;
+            }
+
+            &:hover {
+                background-color: color-mix(in srgb, var(--primary) 50%, transparent 100%);
+            }
+        }
+    }
+
+    .arrow {
+        position: absolute;
+        border-width: 0.35rem 0.2rem 0.35rem 0.2rem;
+        border-style: solid;
+        border-color: var(--secondary) transparent transparent transparent;
+        right: 0.625rem;
+        top: calc(50% - 0.25rem);
+    }
+}
