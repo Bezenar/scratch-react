@@ -1,0 +1,23 @@
+import { Meta, Primary, Controls, Canvas } from '@storybook/blocks';
+import * as NavStories from './Nav.stories';
+
+<Meta of={NavStories} />
+
+# Nav
+
+<Primary />
+
+>At client side is stored object with possible routes. Which are used in itteration to render nav buttons.
+>Single route object type, have all actual router props, and some additional.
+
+```ts
+export interface I_MutatedRouteObject extends NonIndexRouteObject {
+    content?: React.ReactNode;
+    externalSource?: string;
+    children?: Array<I_MutatedRouteObject>;
+}
+```
+
+- `content` - content which be rendered inside NavLink element or directly to a tag.
+- `externalSource` - define is source is external or internal from react router. If string is passed implenet simple a tag with blan target.
+- `children` - type reassign, to provide same type for children routes.

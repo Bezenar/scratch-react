@@ -1,0 +1,22 @@
+
+.navLink {
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: border 0.5s ease;
+
+    span {
+        transition: color 0.5s ease;
+    }
+
+    &.active {
+        border-color: var(--primary);
+    }
+
+    &:hover {
+        border-color: var(--white);
+
+        span {
+            color: var(--white);
+        }
+    }
+}
