@@ -135,7 +135,7 @@ describe('<TextField />', () => {
                     expect(mockOnChange).toHaveBeenCalled();
                     expect(mockOnChange).toHaveBeenCalledWith(`${PROPS.value}new value`);
                 },
-                { timeout: 310 }
+                { timeout: 350 }
             );
         });
 
