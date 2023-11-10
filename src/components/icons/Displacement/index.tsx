@@ -12,14 +12,14 @@ const Displacement: React.FC<I_DirectionIcon> = memo(({ size = 'md', color = 'pr
                     <>
                         <path
                             data-testid="left"
-                            d="M2 3.90021V14.0998"
+                            d="M2 5.25745V22.7425"
                             stroke={colors[color]}
                             strokeWidth="4"
                             strokeLinecap="round"
                             strokeLinejoin="round"
                         />
                         <path
-                            d="M15.3228 2.13279C15.7242 1.81596 16.314 2.1018 16.314 2.61312V15.3869C16.314 15.8982 15.7242 16.184 15.3228 15.8672L7.23277 9.4803C6.92241 9.23531 6.92241 8.7647 7.23277 8.5197L15.3228 2.13279Z"
+                            d="M25.2677 2.22764C25.9557 1.6845 26.9669 2.17452 26.9669 3.05106V24.949C26.9669 25.8255 25.9557 26.3155 25.2677 25.7724L11.399 14.8234C10.867 14.4034 10.867 13.5966 11.399 13.1766L25.2677 2.22764Z"
                             stroke={colors[color]}
                             strokeWidth="4"
                             strokeLinecap="round"
@@ -33,14 +33,14 @@ const Displacement: React.FC<I_DirectionIcon> = memo(({ size = 'md', color = 'pr
                     <>
                         <path
                             data-testid="down"
-                            d="M2.28977 3.83418C1.97294 3.43282 2.25879 2.84297 2.7701 2.84297L15.5439 2.84297C16.0552 2.84297 16.341 3.43282 16.0242 3.83418L9.63729 11.9242C9.39229 12.2346 8.92168 12.2346 8.67669 11.9242L2.28977 3.83418Z"
+                            d="M2.4968 4.43008C1.95366 3.74205 2.44368 2.73088 3.32023 2.73088L25.2182 2.73088C26.0947 2.73088 26.5846 3.74205 26.0415 4.43008L15.0925 18.2987C14.6726 18.8308 13.8658 18.8308 13.4458 18.2987L2.4968 4.43008Z"
                             stroke={colors[color]}
                             strokeWidth="4"
                             strokeLinecap="round"
                             strokeLinejoin="round"
                         />
                         <path
-                            d="M14.2568 17.157L4.05719 17.157"
+                            d="M5.52661 27.2692H23.0117"
                             stroke={colors[color]}
                             strokeWidth="4"
                             strokeLinecap="round"
@@ -54,14 +54,14 @@ const Displacement: React.FC<I_DirectionIcon> = memo(({ size = 'md', color = 'pr
                     <>
                         <path
                             data-testid="up"
-                            d="M16.0242 16.1658C16.341 16.5671 16.0552 17.157 15.5439 17.157H2.77006C2.25876 17.157 1.97296 16.5671 2.28976 16.1658L8.67668 8.07572C8.92167 7.76537 9.39228 7.76537 9.63728 8.07572L16.0242 16.1658Z"
+                            d="M26.2558 25.7842C26.7989 26.4722 26.3089 27.4834 25.4323 27.4834L3.53439 27.4834C2.65787 27.4834 2.16793 26.4722 2.71102 25.7842L13.66 11.9156C14.08 11.3835 14.8868 11.3835 15.3068 11.9156L26.2558 25.7842Z"
                             stroke={colors[color]}
                             strokeWidth="4"
                             strokeLinecap="round"
                             strokeLinejoin="round"
                         />
                         <path
-                            d="M4.05713 2.84296L14.2568 2.84296"
+                            d="M23.226 2.51654L5.74085 2.51654"
                             stroke={colors[color]}
                             strokeWidth="4"
                             strokeLinecap="round"
@@ -76,14 +76,14 @@ const Displacement: React.FC<I_DirectionIcon> = memo(({ size = 'md', color = 'pr
                     <>
                         <path
                             data-testid="right"
-                            d="M2.99116 15.8672C2.5898 16.184 1.99996 15.8982 1.99996 15.3869L1.99996 2.61308C1.99996 2.10177 2.5898 1.81598 2.99116 2.13278L11.0812 8.5197C11.3916 8.76469 11.3916 9.2353 11.0812 9.4803L2.99116 15.8672Z"
+                            d="M3.69925 25.7724C3.01121 26.3155 2.00005 25.8255 2.00005 24.9489L2.00005 3.051C2.00005 2.17447 3.01121 1.68454 3.69925 2.22762L17.5679 13.1766C18.0999 13.5966 18.0999 14.4034 17.5679 14.8234L3.69925 25.7724Z"
                             stroke={colors[color]}
                             strokeWidth="4"
                             strokeLinecap="round"
                             strokeLinejoin="round"
                         />
                         <path
-                            d="M16.314 3.90015V14.0998"
+                            d="M26.9669 22.7426L26.9669 5.25745"
                             stroke={colors[color]}
                             strokeWidth="4"
                             strokeLinecap="round"
@@ -99,9 +99,9 @@ const Displacement: React.FC<I_DirectionIcon> = memo(({ size = 'md', color = 'pr
         <svg
             role="img"
             className={`icon--${size}`}
-            width="19"
-            height="18"
-            viewBox="0 0 19 18"
+            width="29"
+            height={direction === 'up' || direction === 'down' ? 30 : 29}
+            viewBox={`0 0 29 ${direction === 'up' || direction === 'down' ? 30 : 29}`}
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
         >
