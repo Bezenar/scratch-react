@@ -1,3 +1,5 @@
+import type { RenderResult } from '@testing-library/react';
+
 namespace N_Helpers {
     export interface I_ObjectHelpers {
         isEmptyObject: (value: Record<string | number | symbol, unknown>) => boolean;
@@ -18,6 +20,11 @@ namespace N_Helpers {
         isNumber: (value: unknown) => boolean;
         isArray: (value: unknown) => boolean;
         isObject: (value: unknown) => boolean;
+    }
+
+    export interface I_UnitTestHelper {
+        renderWithRouter: (element: JSX.Element, route: string) => RenderResult;
+        mockRootColors: () => void;
     }
 }
 
