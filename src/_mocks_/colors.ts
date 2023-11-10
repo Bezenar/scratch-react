@@ -7,17 +7,3 @@ export const COLORS: I_RootColors = {
     secondary: '#25A043',
     red: '#E70B0B',
 } as I_RootColors;
-
-export function mockColors() {
-    beforeAll(() => {
-        Object.entries(COLORS).forEach(([key, value]) => {
-            document.documentElement.style.setProperty(`--${key}`, value);
-        });
-    });
-
-    afterAll(() => {
-        Object.keys(COLORS).forEach((key) => {
-            document.documentElement.style.removeProperty(`--${key}`);
-        });
-    });
-}

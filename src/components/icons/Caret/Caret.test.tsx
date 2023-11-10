@@ -1,9 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import Caret from '.';
-import { COLORS, mockColors } from '@mocks/colors';
+import UnitTestHelper from '@helpers/UnitTestHelper';
+import { COLORS } from '@mocks/colors';
 
 describe('Caret icon', () => {
-    mockColors();
+    UnitTestHelper.mockRootColors();
 
     describe('Default props', () => {
         beforeEach(() => {

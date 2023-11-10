@@ -1,9 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import Displacement from '.';
-import { COLORS, mockColors } from '@mocks/colors';
+import UnitTestHelper from '@helpers/UnitTestHelper';
+import { COLORS } from '@mocks/colors';
 
 describe('Displacement icon', () => {
-    mockColors();
+    UnitTestHelper.mockRootColors();
 
     describe('Default props', () => {
         beforeEach(() => {

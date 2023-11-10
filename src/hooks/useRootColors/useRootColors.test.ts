@@ -1,9 +1,10 @@
 import { renderHook } from '@testing-library/react';
 import useRootColors from '.';
-import { COLORS, mockColors } from '@mocks/colors'
+import UnitTestHelper from '@helpers/UnitTestHelper';
+import { COLORS } from '@mocks/colors'
 
 describe('useRootColors', () => {
-    mockColors();
+    UnitTestHelper.mockRootColors();
 
     it('Should return all colors', () => {
         const { result } = renderHook(() => useRootColors());

@@ -9,6 +9,7 @@ import { Meta, Story, Props } from '@storybook/addon-docs/blocks'
 - [StringHelpers](#StringHelpers) - class
 - [ArrayHelpers](#ArrayHelpers) - class
 - [ObjectHelpers](#ObjectHelpers) - class
+- [UnitTestHelper](#UnitTestHelper) - class
 
 
 <h2 id="cn">cn</h2>
@@ -25,7 +26,7 @@ Common practice to manage classnames.
 
 ---
 
-- **...arguments** -  *Array\<string | Record\<string, boolean\>\>*
+- **...arguments** -  `Array<string | Record<string, boolean>>`
 
 ---
 
@@ -54,11 +55,11 @@ Class contain help methods to check variables types.
 
 #### Methods
 
-- **isBoolean** - *(val: unknown) => boolean*
-- **isString** - *(val: unknown) => boolean*
-- **isNumber** - *(val: unknown) => boolean*
-- **isArray** - *(val: unknown) => boolean*
-- **isObject** - *(val: unknown) => boolean*
+- **isBoolean** - `(val: unknown) => boolean`
+- **isString** - `(val: unknown) => boolean`
+- **isNumber** - `(val: unknown) => boolean`
+- **isArray** - `(val: unknown) => boolean`
+- **isObject** - `(val: unknown) => boolean`
 
 ---
 
@@ -93,8 +94,8 @@ Class contain help methods to work with string.
 
 #### Methods
 
-- **isEmptyString** - *(val: string) => boolean*
-- **isOnlyWhiteSpaceString** - *(val: string) => boolean*
+- **isEmptyString** - `(val: string) => boolean`
+- **isOnlyWhiteSpaceString** - `(val: string) => boolean`
 
 ---
 
@@ -122,7 +123,7 @@ Class contain help methods to work with array.
 
 #### Methods
 
-- **isEmptyArray** - *(val: Array\<unknown\>) => boolean*
+- **isEmptyArray** - `(val: Array<unknown>) => boolean`
 
 ---
 
@@ -145,7 +146,7 @@ Class contain help methods to work with object.
 
 #### Methods
 
-- **isEmptyObject** - *(val: Record\<string | number | symbol, unknown\>) => boolean*
+- **isEmptyObject** - `(val: Record<string | number | symbol, unknown>) => boolean`
 
 ---
 
@@ -157,3 +158,39 @@ isEmptyObject({a: 'a', b: 'b'}) // output: false
 ```
 
 ---
+
+<h2 id="UnitTestHelper">UnitTestHelper</h2>
+
+#### Description
+
+Helpers which are used only in unit test. To provide some reusable functionality
+
+#### Methods
+
+- **renderWithRouter** - `(element: JSX.Element, route: string) => RenderResult`
+    - render component which are wrapped in BrowserRouter
+- **mockRootColors** - `() => void`
+    - Mock CSS root color variables
+
+#### Usage example
+
+```TS
+// renderWithRouter
+it('Render with no provided path', () => {
+    const result= renderWithRouter(<MyComp />);
+    //expect
+});
+
+it('Render with no provided path `/some-path`', () => {
+    const result= renderWithRouter(<MyComp />, '/some-path');
+    //expect
+});
+
+//mockColors
+
+describe('My test', () => {
+    mockColors();
+    // rest tests
+});
+
+```
