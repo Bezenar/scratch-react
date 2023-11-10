@@ -1,5 +1,6 @@
 export interface I_Button {
     children: React.ReactNode;
+    withoutBorder?: boolean;
     type?: 'button' | 'submit' | 'reset';
     disabled?: boolean;
     id?: string;

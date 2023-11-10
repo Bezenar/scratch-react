@@ -36,7 +36,7 @@ const config: StorybookConfig = {
 
     config.resolve!.alias = {
       '@atoms': path.resolve(__dirname, '../src/components/atoms/'),
-      '@icons': path.resolve(__dirname, 'src/components/icons'),
+      '@icons': path.resolve(__dirname, '../src/components/icons/'),
       '@molecules': path.resolve(__dirname, '../src/components/molecules/'),
       '@hooks': path.resolve(__dirname, '../src/hooks/'),
       '@helpers': path.resolve(__dirname, '../src/helpers/'),
