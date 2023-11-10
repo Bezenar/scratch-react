@@ -3,7 +3,7 @@ import Header from '.';
 import { BrowserRouter } from 'react-router-dom';
 
 const meta: Meta<typeof Header> = {
-    title: 'Molecules/Header',
+    title: 'Organisms/Header',
     component: Header,
     argTypes: {},
 };
