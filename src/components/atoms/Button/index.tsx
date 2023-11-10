@@ -7,7 +7,7 @@ import ObjectHelpers from '@helpers/ObjectHelpers';
 import type { I_Button, T_ComputedAttributes } from './types';
 
 const Button: React.NamedExoticComponent<I_Button> = memo(
-    ({ children, type, disabled, id, className = '', style, onClick }) => {
+    ({ children, withoutBorder, type, disabled, id, className = '', style, onClick }) => {
         const computedProps = useMemo<T_ComputedAttributes>(() => {
             const props: T_ComputedAttributes = {};
 
@@ -32,7 +32,7 @@ const Button: React.NamedExoticComponent<I_Button> = memo(
 
         return (
             <button
-                className={cn(s.btn, { [className]: !!className })}
+                className={cn(s.btn, { [className]: !!className, [s.bordered]: !withoutBorder })}
                 type={type}
                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => onClick(e)}
                 {...computedProps}

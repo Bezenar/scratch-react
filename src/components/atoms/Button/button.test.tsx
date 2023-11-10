@@ -64,8 +64,14 @@ describe('<Button />', () => {
         expect(screen.getByRole('button')).toHaveAttribute('id', 'button');
     });
 
-    it('By default button have only module "btn" classnames', () => {
-        expect(screen.getByRole('button').className).toBe('btn');
+    it('By default button have only module "btn" and "bordered" classnames', () => {
+        expect(screen.getByRole('button').className).toBe('btn bordered');
+    });
+
+    it('Prop "withoutBorder" remove border class name', () => {
+        wrapper?.rerender(<Button {...PROPS} withoutBorder />);
+
+        expect(screen.getByRole('button')).not.toHaveClass('bordered');
     });
 
     it('Prop "className" pass additional classnames to button tag', () => {

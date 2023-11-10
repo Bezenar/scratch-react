@@ -70,6 +70,18 @@ const meta: Meta<typeof Button> = {
                 },
             },
         },
+        withoutBorder: {
+            control: 'boolean',
+            description: 'Prevent styles for border',
+            table: {
+                type: {
+                    summary: 'boolean',
+                },
+                defaultValue: {
+                    summary: 'undefined',
+                },
+            },
+        },
         onClick: {
             action: 'Button clicked',
             control: null,
@@ -98,6 +110,7 @@ export const Default: Story = {
         style: {},
         disabled: false,
         type: 'button',
+        withoutBorder: false,
     },
     render: (args) => <Button {...args} />,
 };
