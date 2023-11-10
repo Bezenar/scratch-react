@@ -10,7 +10,7 @@ import Image from '@atoms/Image';
 import type { I_MutatedRouteObject } from '@t/index';
 //TODO IMPLEMENT LAZY
 export const ROUTES: Array<I_MutatedRouteObject> = [
-    {   
+    {
         path: '/',
         element: <Page />,
         children: [
@@ -28,18 +28,28 @@ export const ROUTES: Array<I_MutatedRouteObject> = [
                 path: 'episodes',
                 element: <Episodes />,
                 content: <Text value={'Episodes'} />,
-            }, {
+            },
+            {
                 path: 'locations',
                 element: <Locations />,
                 content: <Text value={'Locations'} />,
-            }
-        ]
-    }, {
+            },
+        ],
+    },
+    {
         path: '/map',
         element: <InteractiveMap />,
         content: <Text value={'Map'} />,
-    }, {
-        content: <Image src={'https://static-00.iconduck.com/assets.00/storybook-icon-icon-412x512-341bo8r1.png'} alt="storybook" className={s.logo} />,
+    },
+    {
+        content: (
+            <Image
+                src={'https://static-00.iconduck.com/assets.00/storybook-icon-icon-412x512-341bo8r1.png'}
+                alt="storybook"
+                className={s.logo}
+                loading="lazy"
+            />
+        ),
         externalSource: 'https://storybook.js.org/docs/react/get-started/install/',
     },
 ];
