@@ -1,9 +1,10 @@
 import { Outlet } from 'react-router-dom';
+import Header from '@molecules/Header';
 
 const Page: React.FC = () => {
     return (
         <div>
-            <header>header</header>
+            <Header />
             <Outlet />
             <footer>footer</footer>
         </div>
