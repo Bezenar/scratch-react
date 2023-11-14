@@ -74,8 +74,8 @@ module.exports = {
             filename: path.resolve(__dirname, 'dist/index.html'),
             template: path.resolve(__dirname, 'static/index.html'),
             templateParameters: {
-                css: 'css/styles.css',
-                js: 'js/bundle.main.js',
+                css: '/css/styles.css',
+                js: '/js/bundle.main.js',
             },
         }),
         new MiniCssExtractPlugin({
