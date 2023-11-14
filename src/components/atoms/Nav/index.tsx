@@ -22,7 +22,7 @@ const Nav: React.NamedExoticComponent = memo(() => {
 
             const isRootPath = (path: string): boolean => new RegExp(/^\/$/).test(path);
 
-            if (route.path && !isRootPath(route.path)) {
+            if (route.path && !isRootPath(route.path) && route.content) {
                 return (
                     <NavLink
                         key={route.path}
