@@ -39,6 +39,8 @@ const config: StorybookConfig = {
       '@icons': path.resolve(__dirname, '../src/components/icons/'),
       '@molecules': path.resolve(__dirname, '../src/components/molecules/'),
       '@organisms': path.resolve(__dirname, '../src/components/organisms/'),
+      '@templates': path.resolve(__dirname, '../src/components/templates/'),
+      '@pages': path.resolve(__dirname, '../src/pages'),
       '@hooks': path.resolve(__dirname, '../src/hooks/'),
       '@helpers': path.resolve(__dirname, '../src/helpers/'),
       '@img': path.resolve(__dirname, '../src/assets/img/'),

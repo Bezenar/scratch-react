@@ -21,6 +21,8 @@
             "@icons/*": ["./src/components/icons/*"],
             "@molecules/*": ["./src/components/molecules/*"],
             "@organisms/*": ["./src/components/organisms/*"],
+            "@templates/*": ["./src/components/templates/*"],
+            "@pages/*": ["./src/pages/*"],
             "@hooks/*": ["./src/hooks/*"],
             "@helpers/*": ["./src/helpers/*"],
             "@img/*": ["./src/assets/img/*"],
