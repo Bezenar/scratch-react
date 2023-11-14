@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react';
 import useRootColors from '@hooks/useRootColors';
 import type { I_DirectionIcon } from '@t/icons';
 
-const Displacement: React.FC<I_DirectionIcon> = memo(({ size = 'md', color = 'primary', direction }) => {
+const Displacement: React.NamedExoticComponent<I_DirectionIcon> = memo(({ size = 'md', color = 'primary', direction }) => {
     const colors = useRootColors();
 
     const paths = useMemo<JSX.Element>(() => {
