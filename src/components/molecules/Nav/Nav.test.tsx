@@ -1,9 +1,8 @@
 import { screen } from '@testing-library/react';
-// import userEvent from '@testing-library/user-event';
 import Nav from '.';
+import UnitTestHelper from '@helpers/UnitTestHelper';
 import { ROUTES } from '../../../routes';
 import type { I_MutatedRouteObject } from '@t/index';
-import UnitTestHelper from '@helpers/UnitTestHelper';
 
 describe('<Nav />', () => {
     const sourceTypesCount = {
