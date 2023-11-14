@@ -3,7 +3,7 @@ import Row from '.';
 import cn from '../../../helpers/cn';
 
 const meta: Meta<typeof Row> = {
-    title: 'Molecules/Row',
+    title: 'Atoms/Row',
     component: Row,
     argTypes: {
         children: {

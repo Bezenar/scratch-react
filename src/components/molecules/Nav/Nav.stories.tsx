@@ -3,7 +3,7 @@ import Nav from '.';
 import { BrowserRouter } from 'react-router-dom';
 
 const meta: Meta<typeof Nav> = {
-    title: 'Atoms/Nav',
+    title: 'Molecules/Nav',
     component: Nav,
     argTypes: {}
 }
