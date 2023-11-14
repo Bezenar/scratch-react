@@ -2,6 +2,7 @@
 // Please do not change this file!
 interface CssExports {
   'active': string;
+  'menu': string;
   'navLink': string;
 }
 export const cssExports: CssExports;

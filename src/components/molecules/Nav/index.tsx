@@ -24,13 +24,14 @@ const Nav: React.NamedExoticComponent = memo(() => {
 
             if (route.path && !isRootPath(route.path) && route.content) {
                 return (
-                    <NavLink
-                        key={route.path}
-                        to={route.path as string}
-                        className={({ isActive }) => cn(s.navLink, 'px-6 py-3', { [s.active]: isActive })}
-                    >
-                        {route.content}
-                    </NavLink>
+                    <li key={route.path}>
+                        <NavLink
+                            to={route.path as string}
+                            className={({ isActive }) => cn(s.navLink, 'px-6 py-3', { [s.active]: isActive })}
+                        >
+                            {route.content}
+                        </NavLink>
+                    </li>
                 );
             }
 
@@ -39,8 +40,10 @@ const Nav: React.NamedExoticComponent = memo(() => {
     };
 
     return (
-        <nav className="flex ai-center jc-sb gap-10">
-            { mapRoutes(ROUTES) }
+        <nav>
+            <menu className={cn('flex ai-center jc-sb gap-10', s.menu)}>
+                { mapRoutes(ROUTES) }
+            </menu>
         </nav>
     );
 });
