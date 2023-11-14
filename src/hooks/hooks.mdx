@@ -8,7 +8,8 @@ import { Meta } from '@storybook/addon-docs/blocks'
 - [useClickOutside](#useClickOutside)
 - [useToggle](#useToggle)
 - [useRootColors](#useRootColors)
-
+- [usePagination](#usePagination)
+- [useDetectFirstRender](#useDetectFirstRender)
 
 <h2 id="useTimeout">useTimeout</h2>
 
@@ -156,8 +157,11 @@ Return CSS root colors
 ---
 
 #### Return type 
+
+---
+
 ```TS
-interface I_RootColors {
+{
     primary: string;
     secondary: string;
     white: string;
@@ -179,6 +183,88 @@ const Component: React.FC = () => {
     const { primary } = useRootColors();
 
     return // content
+}
+```
+
+---
+
+<h2 id="usePagination">usePagination</h2>
+
+#### Description
+
+---
+
+Hook which store pagination state, pagination action to change page.
+
+- Memoize state at first call, after that can be updated only `totalPages` value
+
+---
+
+#### Arguments
+
+---
+
+- **initial** - Optional. Type `{ active: number; totalPages: number }`
+
+---
+
+#### Return type 
+
+---
+
+```TS
+{
+    active: number,
+    totalPages: number,
+    handleChangePage: (page: number) => void
+}
+```
+
+---
+
+#### Usage example
+
+---
+
+```TS
+const Comp = () => {
+    const {active, totalPages, handleChangePage} = usePagination({active: 1, totalPages: 20});
+
+    return (
+        <>
+        //  content
+        
+        <Pagination active={active} totalPages={totalPages} onChange={handleChangePage} />
+
+        //  content
+        </>
+    );
+}
+```
+
+---
+
+<h2 id="useDetectFirstRender">useDetectFirstRender</h2>
+
+---
+
+#### Dedsctiprion
+
+Help to detect first render, to do something only at first render or prevent.
+
+---
+
+#### Return type `boolean`
+
+---
+
+#### Usage example
+
+```TS
+const Comp = () => {
+    const isFirstRender = useDetectFirstRender();
+
+    //content
 }
 ```
 
