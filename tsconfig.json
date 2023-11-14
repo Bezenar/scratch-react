@@ -20,6 +20,7 @@
             "@atoms/*": ["./src/components/atoms/*"],
             "@icons/*": ["./src/components/icons/*"],
             "@molecules/*": ["./src/components/molecules/*"],
+            "@organisms/*": ["./src/components/organisms/*"],
             "@hooks/*": ["./src/hooks/*"],
             "@helpers/*": ["./src/helpers/*"],
             "@img/*": ["./src/assets/img/*"],

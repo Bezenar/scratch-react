@@ -18,6 +18,7 @@ const config: Config = {
         '^@atoms(.*)$': '<rootDir>/src/components/atoms$1',
         '^@icons(.*)$': '<rootDir>/src/components/icons$1',
         '^@molecules(.*)$': '<rootDir>/src/components/molecules$1',
+        '^@organisms(.*)$': '<rootDir>/src/components/organisms$1',
         '^@hooks(.*)$': '<rootDir>/src/hooks$1',
         '^@helpers(.*)$': '<rootDir>/src/helpers$1',
         '^@img(.*)$': '<rootDir>/src/assets/img$1',
