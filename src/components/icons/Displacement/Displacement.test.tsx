@@ -60,29 +60,33 @@ describe('Displacement icon', () => {
         });
     });
 
-    describe('Prop direction change icon direction', () => {
+    describe('Prop direction change icon direction, and change title', () => {
         it(' Change direction to "left"', () => {
             render(<Displacement direction="left" />);
 
             expect(screen.getByTestId('left')).toBeInTheDocument();
+            expect(screen.getByRole('img', { name: 'displacement-left'})).toBeInTheDocument();
         });
 
         it(' Change direction to "right"', () => {
             render(<Displacement direction="right" />);
 
             expect(screen.getByTestId('right')).toBeInTheDocument();
+            expect(screen.getByRole('img', { name: 'displacement-right'})).toBeInTheDocument();
         });
 
         it(' Change direction to "up"', () => {
             render(<Displacement direction="up" />);
 
             expect(screen.getByTestId('up')).toBeInTheDocument();
+            expect(screen.getByRole('img', { name: 'displacement-up'})).toBeInTheDocument();
         });
         
         it(' Change direction to "down"', () => {
             render(<Displacement direction="down" />);
 
             expect(screen.getByTestId('down')).toBeInTheDocument();
+            expect(screen.getByRole('img', { name: 'displacement-down'})).toBeInTheDocument();
         });
     });
 });

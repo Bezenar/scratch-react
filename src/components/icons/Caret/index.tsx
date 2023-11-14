@@ -69,6 +69,7 @@ const Caret: React.NamedExoticComponent<I_DirectionIcon> = memo(({ direction, si
             role="img"
             className={`icon--${size}`}
         >
+            <title>{`caret-${direction}`}</title>
             {path}
         </svg>
     );

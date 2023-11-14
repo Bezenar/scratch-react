@@ -105,6 +105,7 @@ const Displacement: React.FC<I_DirectionIcon> = memo(({ size = 'md', color = 'pr
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
         >
+            <title>{`displacement-${direction}`}</title>
             {paths}
         </svg>
     );

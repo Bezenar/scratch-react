@@ -60,29 +60,33 @@ describe('Caret icon', () => {
         });
     });
 
-    describe('Prop direction change icon direction', () => {
+    describe('Prop direction change icon direction, icon title', () => {
         it(' Change direction to "left"', () => {
             render(<Caret direction="left" />);
 
             expect(screen.getByTestId('left')).toBeInTheDocument();
+            expect(screen.getByRole('img', { name: 'caret-left'})).toBeInTheDocument();
         });
 
         it(' Change direction to "right"', () => {
             render(<Caret direction="right" />);
 
             expect(screen.getByTestId('right')).toBeInTheDocument();
+            expect(screen.getByRole('img', { name: 'caret-right'})).toBeInTheDocument();
         });
 
         it(' Change direction to "up"', () => {
             render(<Caret direction="up" />);
 
             expect(screen.getByTestId('up')).toBeInTheDocument();
+            expect(screen.getByRole('img', { name: 'caret-up'})).toBeInTheDocument();
         });
         
         it(' Change direction to "down"', () => {
             render(<Caret direction="down" />);
 
             expect(screen.getByTestId('down')).toBeInTheDocument();
+            expect(screen.getByRole('img', { name: 'caret-down'})).toBeInTheDocument();
         });
     });
 });
