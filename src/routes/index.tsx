@@ -1,15 +1,15 @@
 import { createBrowserRouter } from 'react-router-dom';
-import s from '@organisms/Header/Header.module.scss';
-import Page from '../components/Templates/Page';
-import Episodes from '../pages/Episodes';
-import Characters from '../pages/Characters';
-import Locations from '../pages/Locations';
-import InteractiveMap from '../pages/InteractiveMap';
+import s from '@templates/Page/Page.module.scss';
+import Page from '@templates/Page';
+import Episodes from '@pages/Episodes';
+import Characters from '@pages/Characters';
+import Locations from '@pages/Locations';
+import InteractiveMap from '@pages/InteractiveMap';
+import Character from '@pages/Character';
+import Location from '@pages/Location';
+import Episode from '@pages/Episode';
 import Text from '@atoms/Text';
 import Image from '@atoms/Image';
-import Character from '../pages/Character';
-import Location from '../pages/Location';
-import Episode from '../pages/Episode';
 import type { I_MutatedRouteObject } from '@t/index';
 //TODO IMPLEMENT LAZY
 export const ROUTES: Array<I_MutatedRouteObject> = [
