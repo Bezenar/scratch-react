@@ -1,4 +1,4 @@
-import { N_Response } from "./responses";
+import { N_Response } from './responses';
 
 export namespace N_ReqParams {
     export interface I_Characters {
