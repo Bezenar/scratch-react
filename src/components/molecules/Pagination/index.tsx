@@ -76,7 +76,7 @@ const Pagination: React.FC<I_Pagination> = ({ active, totalPages, visiblePages =
         }
 
         return result.map((number) => (
-            <Button withoutBorder={number !== active} onClick={() => handlePage(number)}>{number}</Button>
+            <Button key={number} withoutBorder={number !== active} onClick={() => handlePage(number)}>{number}</Button>
         ));
     }, [visiblePages, active, totalPages]);
 
