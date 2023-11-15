@@ -20,6 +20,8 @@ namespace N_Helpers {
         isNumber: (value: unknown) => boolean;
         isArray: (value: unknown) => boolean;
         isObject: (value: unknown) => boolean;
+        isUndefined: (value: unknown) => boolean;
+        isNull: (value: unknown) => boolean;
     }
 
     export interface I_UnitTestHelper {

@@ -22,6 +22,10 @@ describe('TypeCheck', () => {
             expect(TypeCheck.isBoolean(undefined)).toBeFalsy();
         });
 
+        it('Should return false if get "null"', () => {
+            expect(TypeCheck.isBoolean(null)).toBeFalsy();
+        });
+
         it('Should return false if get "Array"', () => {
             expect(TypeCheck.isBoolean([])).toBeFalsy();
         });
@@ -46,6 +50,10 @@ describe('TypeCheck', () => {
 
         it('Should return false if get "undefined"', () => {
             expect(TypeCheck.isString(undefined)).toBeFalsy();
+        });
+
+        it('Should return false if get "null"', () => {
+            expect(TypeCheck.isString(null)).toBeFalsy();
         });
 
         it('Should return false if get "Array"', () => {
@@ -74,6 +82,10 @@ describe('TypeCheck', () => {
             expect(TypeCheck.isNumber(undefined)).toBeFalsy();
         });
 
+        it('Should return false if get "null"', () => {
+            expect(TypeCheck.isNumber(null)).toBeFalsy();
+        });
+
         it('Should return false if get "Array"', () => {
             expect(TypeCheck.isNumber([])).toBeFalsy();
         });
@@ -98,6 +110,10 @@ describe('TypeCheck', () => {
 
         it('Should return false if get "undefined"', () => {
             expect(TypeCheck.isArray(undefined)).toBeFalsy();
+        });
+
+        it('Should return false if get "null"', () => {
+            expect(TypeCheck.isArray(null)).toBeFalsy();
         });
 
         it('Should return true if get "Array"', () => {
@@ -126,12 +142,76 @@ describe('TypeCheck', () => {
             expect(TypeCheck.isObject(undefined)).toBeFalsy();
         });
 
+        it('Should return false if get "null"', () => {
+            expect(TypeCheck.isObject(null)).toBeFalsy();
+        });
+
         it('Should return false if get "Array"', () => {
             expect(TypeCheck.isObject([])).toBeFalsy();
         });
 
         it('Should return true if get "Object"', () => {
             expect(TypeCheck.isObject({})).toBeTruthy();
+        });
+    });
+
+    describe('isUndefined method', () => {
+        it('Should return false if get "boolean"', () => {
+            expect(TypeCheck.isUndefined(true)).toBeFalsy();
+        });
+
+        it('Should return false if get "number"', () => {
+            expect(TypeCheck.isUndefined(120)).toBeFalsy();
+        });
+
+        it('Should return false if get "string"', () => {
+            expect(TypeCheck.isUndefined('lorem')).toBeFalsy();
+        });
+
+        it('Should return false if get "undefined"', () => {
+            expect(TypeCheck.isUndefined(undefined)).toBeTruthy();
+        });
+
+        it('Should return false if get "null"', () => {
+            expect(TypeCheck.isUndefined(null)).toBeFalsy();
+        });
+
+        it('Should return false if get "Array"', () => {
+            expect(TypeCheck.isUndefined([])).toBeFalsy();
+        });
+
+        it('Should return true if get "Object"', () => {
+            expect(TypeCheck.isUndefined({})).toBeFalsy();
+        });
+    });
+
+    describe('isNull method', () => {
+        it('Should return false if get "boolean"', () => {
+            expect(TypeCheck.isNull(true)).toBeFalsy();
+        });
+
+        it('Should return false if get "number"', () => {
+            expect(TypeCheck.isNull(120)).toBeFalsy();
+        });
+
+        it('Should return false if get "string"', () => {
+            expect(TypeCheck.isNull('lorem')).toBeFalsy();
+        });
+
+        it('Should return false if get "undefined"', () => {
+            expect(TypeCheck.isNull(undefined)).toBeFalsy();
+        });
+
+        it('Should return false if get "null"', () => {
+            expect(TypeCheck.isNull(null)).toBeTruthy();
+        });
+
+        it('Should return false if get "Array"', () => {
+            expect(TypeCheck.isNull([])).toBeFalsy();
+        });
+
+        it('Should return true if get "Object"', () => {
+            expect(TypeCheck.isNull({})).toBeFalsy();
         });
     });
 });

@@ -5,12 +5,12 @@ import { Meta, Story, Props } from '@storybook/addon-docs/blocks'
 # Common help functions.
 
 - [cn](#cn) - function
+- [parseObjectToParamsString](#parseObjectToParamsString) - function
 - [TypeCheck](#TypeCheck) - class
 - [StringHelpers](#StringHelpers) - class
 - [ArrayHelpers](#ArrayHelpers) - class
 - [ObjectHelpers](#ObjectHelpers) - class
 - [UnitTestHelper](#UnitTestHelper) - class
-
 
 <h2 id="cn">cn</h2>
 
@@ -45,6 +45,43 @@ cn('class-1', {'class-2': true, 'class-3': false}, false ? 'class-4' : 'class5')
 
 ---
 
+<h2 id="parseObjectToParamsString">parseObjectToParamsString</h2>
+
+---
+
+#### Description
+
+---
+
+Convert object to url params string. Where object keys are used as params key, object values as params value
+
+---
+
+#### Arguments
+
+---
+
+- **params** - required. Type - any object.
+
+---
+
+#### Usage example
+
+---
+```TS
+const params = {
+    id: 1,
+    name: 'John',
+    surname: 'Doe',
+}
+
+const result = parseObjectToParamsString(params);
+ 
+console.log(result) // output "?id=1&name=John&surname=Doe"
+
+```
+---
+
 <h2 id="TypeCheck">TypeCheck</h2>
 
 #### Description
@@ -60,6 +97,8 @@ Class contain help methods to check variables types.
 - **isNumber** - `(val: unknown) => boolean`
 - **isArray** - `(val: unknown) => boolean`
 - **isObject** - `(val: unknown) => boolean`
+- **isUndefined** - `(val: unknown) => boolean`
+- **isNull** - `(val: unknown) => boolean`
 
 ---
 
@@ -80,6 +119,12 @@ isArray(100) // output: false
 
 isObject({a: 'a', b: 'b'}) // output: true
 isObject([100, 200]) // output: false
+
+isUndefined(1) // output: false
+isUndefined(undefined) // output: true
+
+isNull(1) // output: false
+isNull(null) // output: true
 ```
 
 ---

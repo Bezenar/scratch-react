@@ -18,7 +18,15 @@ class TypeCheck implements N_Helpers.I_TypeCheck {
     }
 
     public isObject(value: unknown): boolean {
-        return typeof value === 'object' && !Array.isArray(value);
+        return typeof value === 'object' && !Array.isArray(value) && value !== null;
+    }
+
+    public isUndefined(value: unknown): boolean {
+        return typeof value === 'undefined';
+    }
+
+    public isNull(value: unknown): boolean {
+        return value === null;
     }
 }
 
