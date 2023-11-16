@@ -25,6 +25,7 @@
             "@pages/*": ["./src/pages/*"],
             "@hooks/*": ["./src/hooks/*"],
             "@helpers/*": ["./src/helpers/*"],
+            "@store/*": ["./src/store/*"],
             "@img/*": ["./src/assets/img/*"],
             "@mocks/*": ["./src/_mocks_/*"],
             "@t/*": ["./src/types/*"],
