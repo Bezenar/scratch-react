@@ -9,7 +9,7 @@ import usePagination from '@hooks/usePagination';
 import cn from '@helpers/cn';
 
 const Page: React.FC = () => {
-    const {handleChangePage, ...restPaginationState} = usePagination({active: 1, totalPages: 10});
+    const {handleChangePage, active, totalPages} = usePagination();
 
     return (
         <div className={cn('bg--black py-5 flex jc-center', s.appWrapper)}>
@@ -26,7 +26,7 @@ const Page: React.FC = () => {
                 </main>
                 <footer>
                     <Card className="flex jc-center ai-center">
-                        <Pagination {...restPaginationState} onChange={handleChangePage} />
+                        <Pagination active={active} totalPages={totalPages} onChange={handleChangePage} />
                     </Card>
                 </footer>
             </div>
