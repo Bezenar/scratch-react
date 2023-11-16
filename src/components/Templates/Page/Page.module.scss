@@ -6,7 +6,8 @@
     width: 90%;
     max-width: 1380px;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: 5.125rem calc(100vh - 12.375rem) 4.75rem;
+    gap: 0.625rem;
 }
 
 .logo {

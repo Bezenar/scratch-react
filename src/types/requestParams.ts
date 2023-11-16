@@ -7,19 +7,19 @@ export namespace N_ReqParams {
         species?: string;
         type?: string;
         gender?: N_Response.T_Gender;
-        page?: `${number}`;
+        page?: string;
     }
 
     export interface I_Locations {
         name?: string;
         type?: string;
         dimension?: string;
-        page?: `${number}`;
+        page?: string;
     }
 
     export interface I_Episodes {
         name?: string;
         episode?: string;
-        page?: `${number}`;
+        page?: string;
     }
 }

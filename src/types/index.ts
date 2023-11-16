@@ -7,3 +7,8 @@ export interface I_MutatedRouteObject extends NonIndexRouteObject {
 }
 
 export type T_MappedRoutes = Array<JSX.Element | T_MappedRoutes | null>;
+
+export type I_PaginationState = {
+    active: number;
+    totalPages: number;
+}
