@@ -22,7 +22,7 @@ describe('parseObjectToParamsString', () => {
             surname: 'Doe',
         }
 
-        expect(parseObjectToParamsString(params)).toMatch(new RegExp(/^?[\w\&\=]{1,}$/));
+        expect(parseObjectToParamsString(params)).toMatch(new RegExp(/^\?[\w\&\=]{1,}$/));
     });
 
     it('Should apply "&" only on params which index are > 0 and less than last', () => {
@@ -32,7 +32,7 @@ describe('parseObjectToParamsString', () => {
             surname: 'Doe',
         }
 
-        expect(parseObjectToParamsString(params)).toMatch(new RegExp(/^?[\w\=]{1,}&[\w\=]{1,}&[\w\=]{1,}$/));
+        expect(parseObjectToParamsString(params)).toMatch(new RegExp(/^\?[\w\=]{1,}&[\w\=]{1,}&[\w\=]{1,}$/));
     });
 
     it('Should combine all object keys, values to params string', () => {
