@@ -1,0 +1,11 @@
+.outer {
+    overflow: auto;
+    scrollbar-color: var(--primary) transparent;
+    scrollbar-width: thin;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+}
+
+.inner {
+    height: 100%;
+}
