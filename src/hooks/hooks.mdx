@@ -194,52 +194,50 @@ const Component: React.FC = () => {
 
 ---
 
-Hook which store pagination state, pagination action to change page.
+Hooks which store pagination functionality.
 
-- Memoize state at first call, after that can be updated only `totalPages` value
-
----
-
-#### Arguments
-
----
-
-- **initial** - Optional. Type `{ active: number; totalPages: number }`
+> This hook work with store, pagination slice.
 
 ---
 
 #### Return type 
 
 ---
-
 ```TS
 {
-    active: number,
-    totalPages: number,
-    handleChangePage: (page: number) => void
+    active: number;
+    totalPages: number;
+    handleResetPagination: () => void;
+    handleSetTotalPages: (totalPages: number) => void;
+    handleChangePage: (page: number) => void;
 }
 ```
-
 ---
 
 #### Usage example
 
 ---
-
 ```TS
 const Comp = () => {
-    const {active, totalPages, handleChangePage} = usePagination({active: 1, totalPages: 20});
+    const {active, totalPages, handleChangePage, handleResetPagination, handleSetTotalPages} = usePagination();
+
+    useEffect(() => {
+        api.get().then((res) => {
+            handleSetTotalPages(res.total);
+        })
+    }, []);
 
     return (
-        <>
-        //  content
-        
-        <Pagination active={active} totalPages={totalPages} onChange={handleChangePage} />
-
-        //  content
-        </>
+        //content
+        <button onClick={() => handleChangePage(active + 1)}>Next</button>
+        <button onClick={() => handleChangePage(active - 1)}>Prev</button>
+        <button onClick={() => handleResetPagination()}>Reset</button>
+        //content
     );
 }
+<Provider>
+    
+</Provider>
 ```
 
 ---

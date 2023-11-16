@@ -1,41 +1,33 @@
-import TypeCheck from '@helpers/TypeCheck';
-import useDetectFirstRender from '@hooks/useDetectFirstRender';
-import { I_Pagination } from '@molecules/Pagination/types';
-import { useCallback, useEffect, useReducer } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { T_Dispatch, T_RootState } from '../../store';
+import { I_PaginationState } from '@t/index';
+import { changePageAction, resetPaginationState } from '../../store/slices/pagination';
 
-export type T_UsePaginationState = Omit<I_Pagination, 'visiblePages' | 'onChange'>;
+export default function usePagination(): I_PaginationState & {
+    handleResetPagination: () => void;
+    handleSetTotalPages: (totalPages: number) => void;
+    handleChangePage: (page: number) => void;
+} {
+    const { active, totalPages } = useSelector((state: T_RootState) => state.pagination);
+    const dispatch = useDispatch<T_Dispatch>();
 
-export default function usePagination(
-    initial: Partial<T_UsePaginationState> = {}
-): T_UsePaginationState & { handleChangePage: (page: number) => void } {
-    const isFirstRender = useDetectFirstRender();
-    const [pagination, setPagination] = useReducer<
-        (prev: T_UsePaginationState, next: Partial<T_UsePaginationState>) => T_UsePaginationState,
-        T_UsePaginationState
-    >(
-        (prev, next) => ({ ...prev, ...next }),
-        {
-            active: 1,
-            totalPages: 0,
-        },
-        (state) => ({ ...state, ...initial })
-    );
+    const handleResetPagination = () => {
+        dispatch(resetPaginationState());
+    };
 
-    const handleChangePage = useCallback(
-        (page: number) => {
-            setPagination({ active: page });
-        },
-        [pagination.active]
-    );
+    const handleSetTotalPages = (totalPages: number) => {
+        dispatch(resetPaginationState({ totalPages }));
+    };
 
-    useEffect(() => {
-        if (TypeCheck.isNumber(initial.totalPages) && !isFirstRender) {
-            setPagination({ totalPages: initial.totalPages });
-        }
-    }, [initial.totalPages]);
+    const handleChangePage = (page: number) => {
+        dispatch(changePageAction(page));
+    };
 
     return {
-        ...pagination,
+        active,
+        totalPages,
+        handleResetPagination,
+        handleSetTotalPages,
         handleChangePage,
     };
 }
