@@ -1,5 +1,6 @@
-import { render, screen } from "@testing-library/react";
-import Card from ".";
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import Card from '.';
 
 describe('<Card />', () => {
     it('Should render children', () => {
@@ -9,7 +10,7 @@ describe('<Card />', () => {
                 <div>Children 2</div>
             </Card>
         );
-        
+
         expect(screen.getByText(/Children 1/)).toBeInTheDocument();
         expect(screen.getByText(/Children 2/)).toBeInTheDocument();
     });
@@ -34,5 +35,20 @@ describe('<Card />', () => {
         );
 
         expect(container.querySelector('div')).toHaveClass('extra-class');
+    });
+
+    it('If pass prop "onCLick", on card click should be called', async () => {
+        const onClickMock = jest.fn();
+
+        const { container } = render(
+            <Card onClick={onClickMock}>
+                <div>Children 1</div>
+                <div>Children 2</div>
+            </Card>
+        );
+
+        await userEvent.click(container.querySelector('.card') as HTMLDivElement);
+
+        expect(onClickMock).toHaveBeenCalled();
     });
 });

@@ -1,7 +1,7 @@
 export namespace N_Response {
     export type T_CharacterStatus = 'alive' | 'dead' | 'unknown';
     export type T_Gender = 'female' | 'male' | 'genderless' | 'unknown';
-    export type T_URL = `"https://rickandmortyapi.com/api/${string}`;
+    export type T_URL = `https://rickandmortyapi.com/api/${string}`;
 
     export interface I_Base {
         id: number;
