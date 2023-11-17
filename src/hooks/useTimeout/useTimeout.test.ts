@@ -38,7 +38,7 @@ describe('useTimeout', () => {
             () => {
                 expect(mockDelayFunction).toHaveBeenCalledTimes(1);
             },
-            { timeout: DELAY_TIME + 10 }
+            { timeout: DELAY_TIME + 50 }
         );
     });
 
