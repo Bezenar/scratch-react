@@ -194,9 +194,9 @@ const Component: React.FC = () => {
 
 ---
 
-Hooks which store pagination functionality.
+Hooks which store pagination state, functionality. 
 
-> This hook work with store, pagination slice.
+> This hook work with external source store. `useSyncExternalSource`.
 
 ---
 
@@ -204,13 +204,16 @@ Hooks which store pagination functionality.
 
 ---
 ```TS
-{
-    active: number;
-    totalPages: number;
-    handleResetPagination: () => void;
-    handleSetTotalPages: (totalPages: number) => void;
-    handleChangePage: (page: number) => void;
-}
+[
+    {
+        active: number;
+        total: number;
+    }, {
+        changeActive: (page: number) => void;
+        setTotal: (totalPages: number) => void;
+        resetPagination: () => void;
+    }
+]
 ```
 ---
 
@@ -219,13 +222,16 @@ Hooks which store pagination functionality.
 ---
 ```TS
 const Comp = () => {
-    const {active, totalPages, handleChangePage, handleResetPagination, handleSetTotalPages} = usePagination();
+    const [
+        { active, total },
+        { changeActive, setTotal, resetPagination }
+    ]= usePagination();
 
     useEffect(() => {
-        api.get().then((res) => {
-            handleSetTotalPages(res.total);
+        api().then((res) => {
+            setTotal(res.pages);
         })
-    }, []);
+    }, [])
 
     return (
         //content
@@ -235,9 +241,6 @@ const Comp = () => {
         //content
     );
 }
-<Provider>
-    
-</Provider>
 ```
 
 ---
