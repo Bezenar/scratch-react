@@ -41,8 +41,12 @@ export interface I_LocationsFilters {
     type: boolean;
 }
 
+export type T_LocationsRadioFilters = Pick<I_LocationsFilters, 'name' | 'dimension' | 'type'>;
+
 export interface I_EpisodesFilters {
     value: string;
     name: boolean;
     episode: boolean;
 }
+
+export type T_EpisodesRadioFilters = Pick<I_EpisodesFilters, 'name' | 'episode'>;

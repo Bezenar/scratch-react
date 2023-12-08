@@ -36,7 +36,7 @@ const Pagination: React.FC<I_Pagination> = ({ active, totalPages, visiblePages =
         // If all pages can fit in visible count
         if(totalPages <= visiblePages) {
             return [...Array(totalPages).keys()].map((i) => (
-                <Button key={`page-${i}`} onClick={() => handlePage(i + 1)}>{ i + 1 }</Button>
+                <Button key={`page-${i}`} withoutBorder={i !== active} onClick={() => handlePage(i + 1)}>{ i + 1 }</Button>
             ));
         }
         // Count of buttons at left and at right side from active page
