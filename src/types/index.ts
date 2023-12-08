@@ -1,4 +1,5 @@
 import type { NonIndexRouteObject } from 'react-router-dom';
+import { N_Response } from './responses';
 
 export interface I_MutatedRouteObject extends NonIndexRouteObject {
     content?: React.ReactNode;
@@ -21,3 +22,27 @@ export type T_UsePaginationReturn = [
         resetPagination: () => void;
     }
 ];
+
+export interface I_CharactersFilters {
+    value: string;
+    name: boolean;
+    species: boolean;
+    type: boolean;
+    status: { id: number, value: N_Response.T_CharacterStatus } | null;
+    gender: { id: number, value: N_Response.T_Gender} | null;
+}
+
+export type T_CharactersRadioFilters = Pick<I_CharactersFilters, 'name' | 'species' | 'type'>;
+
+export interface I_LocationsFilters {
+    value: string;
+    name: boolean;
+    dimension: boolean;
+    type: boolean;
+}
+
+export interface I_EpisodesFilters {
+    value: string;
+    name: boolean;
+    episode: boolean;
+}

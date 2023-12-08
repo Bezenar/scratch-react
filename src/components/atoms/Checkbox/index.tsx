@@ -28,6 +28,7 @@ const Checkbox: React.NamedExoticComponent<I_Checkbox> = memo(({ checked, id, pr
                     [s.left]: !!required && !!prepend,
                     [s.right]: !!required && !prepend,
                 })}
+                onClick={() => onChange(!checked)}
             >
                 {children}
             </span>

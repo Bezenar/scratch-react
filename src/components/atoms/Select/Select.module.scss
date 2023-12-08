@@ -1,17 +1,8 @@
 .select {
     position: relative;
     border: 1px solid transparent;
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
     background-color: var(--black);
-
-    &.opened {
-        border-color: var(--primary);
-
-        .arrow {
-            top: calc(50% - 0.25rem - 0.35rem);
-            border-color: transparent transparent var(--secondary) transparent;
-        }
-    }
 
     .selectedArea {
         position: relative;
@@ -19,8 +10,37 @@
         border-bottom: 1px solid var(--primary);
     }
 
+    &:hover {
+        border-color: var(--primary) var(--primary) transparent var(--primary);
+
+        .arrow {
+            top: calc(50% - 0.25rem - 0.35rem);
+            border-color: transparent transparent var(--secondary) transparent;
+        }
+
+        .listWrapper {
+            grid-template-rows: 1fr;
+            border-style: solid;
+            border-width: 1px;
+            border-color: transparent var(--primary) var(--primary) var(--primary);
+        }
+    }
+
+    .listWrapper {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border-radius: 0 0 20px 20px;
+        background-color: var(--black);
+    }
+
     .list {
         list-style: none;
+        overflow: hidden;
 
         .listItem {
             margin-left: -0.5rem;
@@ -41,7 +61,7 @@
         border-width: 0.35rem 0.2rem 0.35rem 0.2rem;
         border-style: solid;
         border-color: var(--secondary) transparent transparent transparent;
-        right: 0.625rem;
+        right: 0.25rem;
         top: calc(50% - 0.25rem);
     }
 }

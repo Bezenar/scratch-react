@@ -2,6 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import s from './TextField.module.scss';
 import useTimeout from '@hooks/useTimeout';
 import type { I_TextField, T_RestProps } from './types';
+import cn from '@helpers/cn';
 
 const TextField: React.FC<I_TextField> = ({ value, debounce = 300, onChange, ...restProps }) => {
     const [innerValue, setInnerValue] = useState<string>(value);
@@ -32,7 +33,7 @@ const TextField: React.FC<I_TextField> = ({ value, debounce = 300, onChange, ...
     return (
         <span className={restProps.required ? s.required : ''}>
             <input
-                className={s.input}
+                className={cn('wid-100', s.input)}
                 type="text"
                 value={innerValue}
                 onChange={(e) => handleChange(e)}

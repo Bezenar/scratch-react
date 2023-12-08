@@ -3,10 +3,10 @@ import { N_Response } from './responses';
 export namespace N_ReqParams {
     export interface I_Characters {
         name?: string;
-        status?: N_Response.T_CharacterStatus;
+        status?: N_Response.T_CharacterStatus | null;
         species?: string;
         type?: string;
-        gender?: N_Response.T_Gender;
+        gender?: N_Response.T_Gender | null;
         page?: number;
     }
 

@@ -10,6 +10,7 @@ import { Meta } from '@storybook/addon-docs/blocks'
 - [useRootColors](#useRootColors)
 - [usePagination](#usePagination)
 - [useDetectFirstRender](#useDetectFirstRender)
+- [useFilters](#useFilters)
 
 <h2 id="useTimeout">useTimeout</h2>
 
@@ -266,6 +267,54 @@ const Comp = () => {
     const isFirstRender = useDetectFirstRender();
 
     //content
+}
+```
+
+---
+
+<h2 id="useFilters">useFilters</h2>
+
+---
+
+#### Dedsctiprion
+
+Small wrapper around useReducer. Which have defined reducer.
+
+---
+
+#### Generics
+
+---
+
+- `T extends Record<any, any> = Record<string | number | symbol, unknown>` - Assigned to useReducer state
+
+#### Arguments
+
+---
+
+- **initialFilters** - initial state passed to useReducer.
+
+---
+
+#### Return type `[T, Dispatch<Partial<T>>]`
+
+---
+
+#### Usage example
+
+```TS
+const Comp = () => {
+    const [state, setFilters] = useFilters({name: null, age: null});
+    const incrementAge = () = setFilters({age: ++state.age});
+    const changeName = () => setFilters({name: 'John'});
+    const resetState = () => setFilters({name: null, age: null});
+    
+    return (
+        <ul>
+            <li>Name: {state.name}</li>
+            <li>Age: {state.age}</li>
+        </ul>
+    );
 }
 ```
 
