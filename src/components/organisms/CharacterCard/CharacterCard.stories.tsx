@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import CharacterCard from '.';
 
 const meta: Meta<typeof CharacterCard> = {
-    title: 'Molecules/CharacterCard',
+    title: 'Organisms/CharacterCard',
     component: CharacterCard,
     argTypes: {
         id: {

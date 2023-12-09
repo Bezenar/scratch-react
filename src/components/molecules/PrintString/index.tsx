@@ -24,12 +24,14 @@ const PrintString: React.FC<I_PrintString> = ({ value, printSpeed = 300, onPrint
 
     return (
         <span style={{ display: 'inline-flex', alignItems: 'center' }}>
-            <Text value={printedValue} {...rest} />
-            {initialValue !== printedValue && (
-                <span className={cn(s.cursor, 'text--white pr-4')} style={{ animationDuration: `${printSpeed * 2}ms` }}>
-                    |
-                </span>
-            )}
+            <Text {...rest}>
+                {printedValue}
+                {initialValue !== printedValue && (
+                    <span className={cn(s.cursor, 'text--white pr-4')} style={{ animationDuration: `${printSpeed * 2}ms` }}>
+                        |
+                    </span>
+                )}
+            </Text>
         </span>
     );
 };

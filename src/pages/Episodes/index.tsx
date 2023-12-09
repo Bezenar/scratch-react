@@ -10,6 +10,8 @@ import useFilters from '@hooks/useFilters';
 import usePagination from '@hooks/usePagination';
 import { EPISODES_INITIAL_FILTERS } from '../../constants';
 import type { I_EpisodesFilters, T_EpisodesRadioFilters } from '@t/index';
+import PrintString from '@molecules/PrintString';
+import cn from '@helpers/cn';
 
 const Episodes: React.FC = () => {
     const [filters, setFilters] = useFilters<I_EpisodesFilters>(EPISODES_INITIAL_FILTERS);
@@ -63,9 +65,9 @@ const Episodes: React.FC = () => {
             <Scroll height={'calc(100% - 5rem'}>
                 <Grid colCount={3} gap={4}>
                     {data?.results.map((episode) => (
-                        <div>
-                            <Text value={episode.name} color="white" />
-                        </div>
+                        <Card key={episode.id} className={cn('flex ai-center jc-center text--center h-full')}>
+                            <PrintString value={episode.name} printSpeed={150} />
+                        </Card>
                     ))}
                 </Grid>
             </Scroll>

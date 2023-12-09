@@ -18,6 +18,12 @@ $ai: (
   'center': center,
   'stretch': stretch,
 );
+$as: (
+    'start': flex-start,
+    'end': flex-end,
+    'center': center,
+    'stretch': stretch,
+);
 $grow: 1, 2;
 
 .flex {
@@ -58,6 +64,14 @@ $grow: 1, 2;
         @each $value in $grow {
             &--#{$value} {
                 flex-grow: $value;
+            }
+        }
+    }
+
+    .as {
+        @each $name, $value in $as {
+            &-#{$name} {
+                align-self: $value;
             }
         }
     }

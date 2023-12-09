@@ -7,7 +7,7 @@ import Radio from '@atoms/Radio';
 import Text from '@atoms/Text';
 import TextField from '@atoms/TextField';
 import Select from '@atoms/Select';
-import CharacterCard from '@molecules/CharacterCard';
+import CharacterCard from '@organisms/CharacterCard';
 import usePagination from '@hooks/usePagination';
 import useFilters from '@hooks/useFilters';
 import { CHARACTERS_INITIAL_FILTERS, SELECT_GENDER_OPTIONS, SELECT_STATUS_OPTIONS } from '../../constants';

@@ -1,6 +1,10 @@
 import type { NonIndexRouteObject } from 'react-router-dom';
 import { N_Response } from './responses';
 
+export type T_UnknownObject = Record<string | number | symbol, unknown>;
+
+export type T_AnyObject = Record<any, any>;
+
 export interface I_MutatedRouteObject extends NonIndexRouteObject {
     content?: React.ReactNode;
     externalSource?: string;

@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import CharacterCard from '.';
 import UnitTestHelper from '@helpers/UnitTestHelper';
@@ -28,8 +28,22 @@ describe('<CharacterCard />', () => {
         expect(screen.getByRole('img')).toHaveAttribute('alt', PROPS.name);
     });
 
-    it('Should render name', () => {
-        expect(screen.getByText(/image\-name/)).toBeInTheDocument();
+    it('First name letter appear after 150ms', async () => {
+        await waitFor(
+            () => {
+                expect(screen.getByText(/^i$/)).toBeInTheDocument();
+            },
+            { timeout: 200 }
+        );
+    });
+
+    it('Full name appear after name.length * printSpeed', async () => {
+        await waitFor(
+            () => {
+                expect(screen.getByText(/^image\-name$/)).toBeInTheDocument();
+            },
+            { timeout: PROPS.name.length * 180 }
+        );
     });
 
     it('On card click should navigate to "character/:id" route', async () => {
