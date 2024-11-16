@@ -1,15 +1,15 @@
 import type { RenderResult } from '@testing-library/react';
 
 namespace N_Utility {
-    export interface I_ObjectHelpers {
+    export interface I_ObjectUtilFn {
         isEmptyObject: (value: Record<string | number | symbol, unknown>) => boolean;
     }
 
-    export interface I_ArrayHelpers {
+    export interface I_ArrayUtilFn {
         isEmptyArray: (value: Array<unknown>) => boolean;
     }
 
-    export interface I_StringHelpers {
+    export interface I_StringUtilFn {
         isEmptyString: (value: string) => boolean;
         isOnlyWhiteSpaceString: (value: string) => boolean;
     }

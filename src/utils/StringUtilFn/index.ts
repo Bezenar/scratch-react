@@ -1,6 +1,6 @@
 import N_Utility from '@t/utility';
 
-class StringHelper implements N_Utility.I_StringHelpers {
+class StringUtilFn implements N_Utility.I_StringUtilFn {
     public isEmptyString(value: string): boolean {
         return value.length === 0;
     }
@@ -10,4 +10,4 @@ class StringHelper implements N_Utility.I_StringHelpers {
     }
 }
 
-export default new StringHelper();
+export default new StringUtilFn();

@@ -1,9 +1,9 @@
-import ObjectHelpers from '@utils/ObjectHelpers';
-import StringHelpers from '@utils/StringHelpers';
+import ObjectUtilFn from '@utils/ObjectUtilFn';
+import StringUtilFn from '@utils/StringUtilFn';
 import TypeCheck from '@utils/TypeCheck';
 
 export default function parseParamsObjectToString(params: Record<any, any>): string {
-    if (ObjectHelpers.isEmptyObject(params)) {
+    if (ObjectUtilFn.isEmptyObject(params)) {
         return '';
     }
 
@@ -14,12 +14,12 @@ export default function parseParamsObjectToString(params: Record<any, any>): str
 
         if (
             TypeCheck.isString(value) &&
-            (StringHelpers.isEmptyString(value) || StringHelpers.isOnlyWhiteSpaceString(value))
+            (StringUtilFn.isEmptyString(value) || StringUtilFn.isOnlyWhiteSpaceString(value))
         ) {
             return string;
         }
 
-        if (StringHelpers.isEmptyString(string)) {
+        if (StringUtilFn.isEmptyString(string)) {
             string += '?';
         } else {
             string += '&';

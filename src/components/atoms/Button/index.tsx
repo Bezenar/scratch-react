@@ -2,8 +2,8 @@ import { memo, useMemo } from 'react';
 import s from './Button.module.scss';
 import cn from '@utils/cn';
 import TypeCheck from '@utils/TypeCheck';
-import StringHelpers from '@utils/StringHelpers';
-import ObjectHelpers from '@utils/ObjectHelpers';
+import StringUtilFn from '@utils/StringUtilFn';
+import ObjectUtilFn from '@utils/ObjectUtilFn';
 import type { I_Button, T_ComputedAttributes } from './types';
 
 const Button: React.NamedExoticComponent<I_Button> = memo(
@@ -17,13 +17,13 @@ const Button: React.NamedExoticComponent<I_Button> = memo(
 
             if (
                 TypeCheck.isString(id) &&
-                !StringHelpers.isEmptyString(id as string) &&
-                !StringHelpers.isOnlyWhiteSpaceString(id as string)
+                !StringUtilFn.isEmptyString(id as string) &&
+                !StringUtilFn.isOnlyWhiteSpaceString(id as string)
             ) {
                 props.id = id;
             }
 
-            if (TypeCheck.isObject(style) && !ObjectHelpers.isEmptyObject(style as {})) {
+            if (TypeCheck.isObject(style) && !ObjectUtilFn.isEmptyObject(style as {})) {
                 props.style = style;
             }
 
