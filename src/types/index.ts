@@ -18,15 +18,6 @@ export type I_PaginationState = {
     total: number;
 }
 
-export type T_UsePaginationReturn = [
-    I_PaginationState,
-    {
-        changeActive: (page: number) => void;
-        setTotal: (total: number) => void;
-        resetPagination: () => void;
-    }
-];
-
 export interface I_CharactersFilters {
     value: string;
     name: boolean;

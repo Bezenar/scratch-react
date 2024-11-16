@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useGetLocationsQuery } from '@store/slices/RickAndMortyApi';
 import Card from '@atoms/Card';
 import Radio from '@atoms/Radio';
@@ -7,7 +6,6 @@ import TextField from '@atoms/TextField';
 import Scroll from '@atoms/Scroll';
 import Grid from '@atoms/Grid';
 import useFilters from '@hooks/useFilters';
-import usePagination from '@hooks/usePagination';
 import { LOCATIONS_INITIAL_FILTERS } from '../../constants';
 import type { I_LocationsFilters, T_LocationsRadioFilters } from '@t/index';
 import PrintString from '@molecules/PrintString';
@@ -15,19 +13,12 @@ import cn from '@utils/cn';
 
 const Locations: React.FC = () => {
     const [filters, setFilters] = useFilters<I_LocationsFilters>(LOCATIONS_INITIAL_FILTERS);
-    const [{ active }, { setTotal }] = usePagination();
     const { data, isLoading } = useGetLocationsQuery({
-        page: active,
+        page: 1,
         name: filters.name ? filters.value : '',
         dimension: filters.dimension ? filters.value : '',
         type: filters.type ? filters.value : '',
     });
-
-    useEffect(() => {
-        if (data?.info.pages) {
-            setTotal(data.info.pages);
-        }
-    }, [data?.info.pages]);
 
     const handleRadio = (name: keyof T_LocationsRadioFilters, checked: boolean) => {
         setFilters({

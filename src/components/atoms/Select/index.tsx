@@ -1,14 +1,11 @@
 import cn from '@utils/cn';
 import s from './Select.module.scss';
-// import useClickOutside from '@hooks/useClickOutside';
-// import useToggle from '@hooks/useToggle';
 import type { I_Option, I_Select } from './types';
 
 const Select: React.FC<I_Select> = ({ selected, options, placeholder, onSelect }) => {
 
     const handleSelect = (opt: I_Option) => {
         onSelect(opt);
-        // toggleOpened(false);
     }
 
     return (
@@ -16,7 +13,6 @@ const Select: React.FC<I_Select> = ({ selected, options, placeholder, onSelect }
             <div
                 className={cn(s.selectedArea, 'text--center pointer py-1 pl-5 pr-8')}
                 role="combobox"
-                // onClick={() => toggleOpened()}
             >
                 <span className={!!selected ? 'text--primary' : 'text--secondary'}>
                     {selected || placeholder || ''}

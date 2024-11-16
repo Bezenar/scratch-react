@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useGetEpisodesQuery } from '@store/slices/RickAndMortyApi';
 import Card from '@atoms/Card';
 import Radio from '@atoms/Radio';
@@ -7,7 +6,6 @@ import TextField from '@atoms/TextField';
 import Scroll from '@atoms/Scroll';
 import Grid from '@atoms/Grid';
 import useFilters from '@hooks/useFilters';
-import usePagination from '@hooks/usePagination';
 import { EPISODES_INITIAL_FILTERS } from '../../constants';
 import type { I_EpisodesFilters, T_EpisodesRadioFilters } from '@t/index';
 import PrintString from '@molecules/PrintString';
@@ -15,18 +13,11 @@ import cn from '@utils/cn';
 
 const Episodes: React.FC = () => {
     const [filters, setFilters] = useFilters<I_EpisodesFilters>(EPISODES_INITIAL_FILTERS);
-    const [{ active }, { setTotal }] = usePagination();
     const { data, isLoading } = useGetEpisodesQuery({
-        page: active,
+        page: 1,
         name: filters.name ? filters.value : '',
         episode: filters.episode ? filters.value : '',
     });
-
-    useEffect(() => {
-        if (data?.info.pages) {
-            setTotal(data.info.pages);
-        }
-    }, [data?.info.pages]);
 
     const handleRadio = (name: keyof T_EpisodesRadioFilters, checked: boolean) => {
         setFilters({

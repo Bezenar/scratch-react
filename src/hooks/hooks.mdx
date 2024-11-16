@@ -8,7 +8,6 @@ import { Meta } from '@storybook/addon-docs/blocks'
 - [useClickOutside](#useClickOutside)
 - [useToggle](#useToggle)
 - [useRootColors](#useRootColors)
-- [usePagination](#usePagination)
 - [useDetectFirstRender](#useDetectFirstRender)
 - [useFilters](#useFilters)
 
@@ -184,63 +183,6 @@ const Component: React.FC = () => {
     const { primary } = useRootColors();
 
     return // content
-}
-```
-
----
-
-<h2 id="usePagination">usePagination</h2>
-
-#### Description
-
----
-
-Hooks which store pagination state, functionality. 
-
-> This hook work with external source store. `useSyncExternalSource`.
-
----
-
-#### Return type 
-
----
-```TS
-[
-    {
-        active: number;
-        total: number;
-    }, {
-        changeActive: (page: number) => void;
-        setTotal: (totalPages: number) => void;
-        resetPagination: () => void;
-    }
-]
-```
----
-
-#### Usage example
-
----
-```TS
-const Comp = () => {
-    const [
-        { active, total },
-        { changeActive, setTotal, resetPagination }
-    ]= usePagination();
-
-    useEffect(() => {
-        api().then((res) => {
-            setTotal(res.pages);
-        })
-    }, [])
-
-    return (
-        //content
-        <button onClick={() => handleChangePage(active + 1)}>Next</button>
-        <button onClick={() => handleChangePage(active - 1)}>Prev</button>
-        <button onClick={() => handleResetPagination()}>Reset</button>
-        //content
-    );
 }
 ```
 

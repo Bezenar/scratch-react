@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 import { useGetCharactersQuery } from '../../store/slices/RickAndMortyApi';
 import Grid from '@atoms/Grid';
 import Scroll from '@atoms/Scroll';
@@ -8,29 +8,23 @@ import Text from '@atoms/Text';
 import TextField from '@atoms/TextField';
 import Select from '@atoms/Select';
 import CharacterCard from '@organisms/CharacterCard';
-import usePagination from '@hooks/usePagination';
 import useFilters from '@hooks/useFilters';
 import { CHARACTERS_INITIAL_FILTERS, SELECT_GENDER_OPTIONS, SELECT_STATUS_OPTIONS } from '../../constants';
 import type { I_CharactersFilters, T_CharactersRadioFilters } from '@t/index';
 import { N_Response } from '@t/responses';
+import Pagination from '@molecules/Pagination';
 
 const Characters: React.FC = () => {
     const [filters, setFilters] = useFilters<I_CharactersFilters>(CHARACTERS_INITIAL_FILTERS);
-    const [{ active }, { setTotal }] = usePagination();
+    const [activePage, setActivePage] = useState<number>(1);
     const { data, isLoading } = useGetCharactersQuery({
-        page: active,
+        page: activePage,
         name: filters.name ? filters.value : '',
         species: filters.species ? filters.value : '',
         type: filters.type ? filters.value : '',
         status: filters.status?.value ?? null,
         gender: filters.gender?.value ?? null,
     });
-
-    useEffect(() => {
-        if (data?.info.pages) {
-            setTotal(data.info.pages);
-        }
-    }, [data?.info.pages]);
 
     const handleSelect = (
         key: 'status' | 'gender',
@@ -104,6 +98,12 @@ const Characters: React.FC = () => {
                     ))}
                 </Grid>
             </Scroll>
+
+            <footer>
+                <Card className="flex jc-center ai-center">
+                    <Pagination active={activePage} totalPages={data?.info.pages ?? 0} onChange={setActivePage} />
+                </Card>
+            </footer>
         </>
     );
 };
