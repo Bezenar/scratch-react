@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import Nav from '.';
-import UnitTestHelper from '@helpers/UnitTestHelper';
+import UnitTestHelper from '@utils/UnitTestHelper';
 import { ROUTES } from '../../../routes';
 import type { I_MutatedRouteObject } from '@t/index';
 

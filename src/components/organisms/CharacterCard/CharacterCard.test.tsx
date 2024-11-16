@@ -1,7 +1,7 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import CharacterCard from '.';
-import UnitTestHelper from '@helpers/UnitTestHelper';
+import UnitTestHelper from '@utils/UnitTestHelper';
 import type { I_CharacterCard } from './types';
 import type { N_Response } from '@t/responses';
 

@@ -24,7 +24,7 @@
             "@templates/*": ["./src/components/templates/*"],
             "@pages/*": ["./src/pages/*"],
             "@hooks/*": ["./src/hooks/*"],
-            "@helpers/*": ["./src/helpers/*"],
+            "@utils/*": ["./src/utils/*"],
             "@store/*": ["./src/store/*"],
             "@img/*": ["./src/assets/img/*"],
             "@mocks/*": ["./src/_mocks_/*"],

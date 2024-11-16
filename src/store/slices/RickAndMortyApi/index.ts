@@ -1,4 +1,4 @@
-import parseObjectToParamsString from '@helpers/parseObjectToParamsString';
+import parseObjectToParamsString from '@utils/parseObjectToParamsString';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { API_URL } from '../../../constants';
 import type { N_ReqParams } from '@t/requestParams';

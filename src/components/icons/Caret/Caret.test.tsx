@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import Caret from '.';
-import UnitTestHelper from '@helpers/UnitTestHelper';
+import UnitTestHelper from '@utils/UnitTestHelper';
 import { COLORS } from '@mocks/colors';
 
 describe('Caret icon', () => {

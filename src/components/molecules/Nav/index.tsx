@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 import s from './Nav.module.scss';
-import cn from '@helpers/cn';
+import cn from '@utils/cn';
 import { ROUTES } from '../../../routes';
 import type { I_MutatedRouteObject, T_MappedRoutes } from '@t/index';
 

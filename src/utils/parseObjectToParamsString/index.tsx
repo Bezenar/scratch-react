@@ -1,6 +1,6 @@
-import ObjectHelpers from '@helpers/ObjectHelpers';
-import StringHelpers from '@helpers/StringHelpers';
-import TypeCheck from '@helpers/TypeCheck';
+import ObjectHelpers from '@utils/ObjectHelpers';
+import StringHelpers from '@utils/StringHelpers';
+import TypeCheck from '@utils/TypeCheck';
 
 export default function parseParamsObjectToString(params: Record<any, any>): string {
     if (ObjectHelpers.isEmptyObject(params)) {

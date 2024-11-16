@@ -1,9 +1,9 @@
 import { memo, useMemo } from 'react';
 import s from './Button.module.scss';
-import cn from '@helpers/cn';
-import TypeCheck from '@helpers/TypeCheck';
-import StringHelpers from '@helpers/StringHelpers';
-import ObjectHelpers from '@helpers/ObjectHelpers';
+import cn from '@utils/cn';
+import TypeCheck from '@utils/TypeCheck';
+import StringHelpers from '@utils/StringHelpers';
+import ObjectHelpers from '@utils/ObjectHelpers';
 import type { I_Button, T_ComputedAttributes } from './types';
 
 const Button: React.NamedExoticComponent<I_Button> = memo(

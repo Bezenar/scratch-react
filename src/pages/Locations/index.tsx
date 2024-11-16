@@ -11,7 +11,7 @@ import usePagination from '@hooks/usePagination';
 import { LOCATIONS_INITIAL_FILTERS } from '../../constants';
 import type { I_LocationsFilters, T_LocationsRadioFilters } from '@t/index';
 import PrintString from '@molecules/PrintString';
-import cn from '@helpers/cn';
+import cn from '@utils/cn';
 
 const Locations: React.FC = () => {
     const [filters, setFilters] = useFilters<I_LocationsFilters>(LOCATIONS_INITIAL_FILTERS);

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import s from './Scroll.module.scss';
 import useToggle from '@hooks/useToggle';
-import cn from '@helpers/cn';
+import cn from '@utils/cn';
 
 export interface I_Scroll {
     height: number | string;

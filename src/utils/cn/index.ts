@@ -1,4 +1,4 @@
-import TypeCheck from '@helpers/TypeCheck';
+import TypeCheck from '@utils/TypeCheck';
 
 type Args = string | Record<string, boolean>;
 

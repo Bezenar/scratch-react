@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import cn from '@helpers/cn';
+import cn from '@utils/cn';
 import s from './CharacterCard.module.scss';
 import Card from '@atoms/Card';
 import Image from '@atoms/Image';

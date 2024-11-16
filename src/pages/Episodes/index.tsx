@@ -11,7 +11,7 @@ import usePagination from '@hooks/usePagination';
 import { EPISODES_INITIAL_FILTERS } from '../../constants';
 import type { I_EpisodesFilters, T_EpisodesRadioFilters } from '@t/index';
 import PrintString from '@molecules/PrintString';
-import cn from '@helpers/cn';
+import cn from '@utils/cn';
 
 const Episodes: React.FC = () => {
     const [filters, setFilters] = useFilters<I_EpisodesFilters>(EPISODES_INITIAL_FILTERS);

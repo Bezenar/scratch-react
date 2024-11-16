@@ -1,6 +1,6 @@
 import { memo, useMemo } from 'react';
 import s from './Checkbox.module.scss';
-import cn from '@helpers/cn';
+import cn from '@utils/cn';
 import Row from '@atoms/Row';
 import type { I_Checkbox, T_InputAttributes } from './types';
 

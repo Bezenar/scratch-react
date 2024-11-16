@@ -22,7 +22,7 @@ module.exports = {
             '@pages': path.resolve(__dirname, 'src/pages'),
             '@icons': path.resolve(__dirname, 'src/components/icons'),
             '@hooks': path.resolve(__dirname, 'src/hooks/'),
-            '@helpers': path.resolve(__dirname, 'src/helpers/'),
+            '@utils': path.resolve(__dirname, 'src/utils/'),
             '@store': path.resolve(__dirname, 'src/store/'),
             '@img': path.resolve(__dirname, 'src/assets/img/'),
             '@mocks': path.resolve(__dirname, 'src/_mocks_/'),

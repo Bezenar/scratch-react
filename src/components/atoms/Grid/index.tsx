@@ -1,5 +1,5 @@
 import { Children } from 'react';
-import cn from '@helpers/cn';
+import cn from '@utils/cn';
 import type { I_Grid } from './types';
 
 const Grid: React.FC<I_Grid> = ({ colCount, gap, children }) => {

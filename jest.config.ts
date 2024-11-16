@@ -22,7 +22,7 @@ const config: Config = {
         '^@templates(.*)$': '<rootDir>/src/components/templates$1',
         '^@pages(.*)$': '<rootDir>/src/pages$1',
         '^@hooks(.*)$': '<rootDir>/src/hooks$1',
-        '^@helpers(.*)$': '<rootDir>/src/helpers$1',
+        '^@utils(.*)$': '<rootDir>/src/utils$1',
         '^@store(.*)$': '<rootDir>/src/store$1',
         '^@img(.*)$': '<rootDir>/src/assets/img$1',
         '^@mocks(.*)$': '<rootDir>/src/_mocks_$1',

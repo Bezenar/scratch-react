@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import Button from '@atoms/Button';
 import Displacement from '@icons/Displacement';
 import Caret from '@icons/Caret';
-import TypeCheck from '@helpers/TypeCheck';
+import TypeCheck from '@utils/TypeCheck';
 import type { I_Pagination } from './types';
 
 const Pagination: React.FC<I_Pagination> = ({ active, totalPages, visiblePages = 5, onChange }) => {

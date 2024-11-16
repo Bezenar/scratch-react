@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import s from './PrintString.module.scss';
-import cn from '@helpers/cn';
+import cn from '@utils/cn';
 import Text from '@atoms/Text';
 import useTimeout from '@hooks/useTimeout';
 import type { I_PrintString } from './types';

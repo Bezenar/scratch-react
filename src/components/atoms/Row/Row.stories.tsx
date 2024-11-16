@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Row from '.';
-import cn from '../../../helpers/cn';
+import cn from '@utils/cn';
 
 const meta: Meta<typeof Row> = {
     title: 'Atoms/Row',

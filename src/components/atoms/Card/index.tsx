@@ -1,5 +1,5 @@
 import s from './Card.module.scss';
-import cn from '@helpers/cn';
+import cn from '@utils/cn';
 import type { I_Card } from './types';
 
 const Card: React.FC<I_Card> = ({ children, className = '', onClick }) => {

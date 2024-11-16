@@ -1,4 +1,4 @@
-import cn from '@helpers/cn';
+import cn from '@utils/cn';
 import s from './Select.module.scss';
 // import useClickOutside from '@hooks/useClickOutside';
 // import useToggle from '@hooks/useToggle';

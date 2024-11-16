@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import logo from '@img/logo.png';
-import cn from '@helpers/cn';
+import cn from '@utils/cn';
 import s from './Page.module.scss';
 import Pagination from '@molecules/Pagination';
 import Card from '@atoms/Card';
