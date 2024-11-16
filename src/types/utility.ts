@@ -1,6 +1,6 @@
 import type { RenderResult } from '@testing-library/react';
 
-namespace N_Helpers {
+namespace N_Utility {
     export interface I_ObjectHelpers {
         isEmptyObject: (value: Record<string | number | symbol, unknown>) => boolean;
     }
@@ -30,4 +30,4 @@ namespace N_Helpers {
     }
 }
 
-export default N_Helpers;
+export default N_Utility;

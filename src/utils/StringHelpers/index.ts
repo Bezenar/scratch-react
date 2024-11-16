@@ -1,6 +1,6 @@
-import N_Helpers from '@t/helpers';
+import N_Utility from '@t/utility';
 
-class StringHelper implements N_Helpers.I_StringHelpers {
+class StringHelper implements N_Utility.I_StringHelpers {
     public isEmptyString(value: string): boolean {
         return value.length === 0;
     }

@@ -1,6 +1,6 @@
-import N_Helpers from '@t/helpers';
+import N_Utility from '@t/utility';
 
-class TypeCheck implements N_Helpers.I_TypeCheck {
+class TypeCheck implements N_Utility.I_TypeCheck {
     public isBoolean(value: unknown): boolean {
         return typeof value === 'boolean';
     }
